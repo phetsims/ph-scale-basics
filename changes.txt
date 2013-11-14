@@ -1,3 +1,4 @@
+# 1.0.0-dev.1 11/13/13
 11/13/13 **** feature complete ****
 11/13/13 set up sim framework, gets everything from ph-scale
 11/13/13 created repo
