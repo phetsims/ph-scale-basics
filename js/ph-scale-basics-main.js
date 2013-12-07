@@ -14,7 +14,7 @@ define( function( require ) {
   var SimLauncher = require( 'JOIST/SimLauncher' );
 
   // strings
-  var simTitle = require( 'string!PH_SCALE/ph-scale-basics.name' );
+  var simTitle = 'scisaB :elacS pH';//require( 'string!PH_SCALE/ph-scale-basics.name' ); //XXX fix this
 
   var simOptions = {
     credits: {
