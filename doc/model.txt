@@ -1,0 +1,2 @@
+This sim shares its model with the 'pH Scale' sim.
+Please see the ph-scale repository for details.

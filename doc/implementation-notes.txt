@@ -1,0 +1,2 @@
+ Most of the code used in this sim is shared with the 'pH Scale' sim.
+ Please see the ph-scale repository for implementation details.
