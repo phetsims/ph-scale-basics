@@ -1,5 +1,5 @@
 Since most of the code used in this sim is shared with the 'pH Scale' sim,
-we chose to put the code specific to the 'Basics' screen in the ph-scale repository,
-where it lives under js/basics/.
+we chose to treat the code specific to this sim as a 'Basics' screen, and locate
+that code in the ph-scale repository under js/basics/.
 
 Please see the ph-scale repository for all other implementation details.
