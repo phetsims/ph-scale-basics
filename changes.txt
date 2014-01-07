@@ -1,3 +1,4 @@
+# 1.0.0 1/7/14
 # 1.0.0-rc.2 12/23/13
 12/23/13 add 'in part' to RSC funding notice
 # 1.0.0-dev.10 12/20/13
