@@ -8,11 +8,11 @@
     "branch": "master"
   },
   "sun": {
-    "sha": "c60237de6a4c8c639edaf789b929a682c19d9301",
+    "sha": "f025335eb55925376ad3120de9f4df33070b0a3f",
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "c3e04dfcb8731afadb85131b7efe560070cfb281",
+    "sha": "956ce31a50c4ca5a0b455ef5c0283f7288ef9247",
     "branch": "master"
   },
   "scenery": {
@@ -20,7 +20,7 @@
     "branch": "master"
   },
   "ph-scale": {
-    "sha": "1c8d4d9f760eb55bc46a5fc50bce71693853874d",
+    "sha": "b2d3f25147e0f24f58ee103da8be62d969261a12",
     "branch": "master"
   },
   "phetcommon": {
@@ -40,15 +40,15 @@
     "branch": "master"
   },
   "joist": {
-    "sha": "b20b7da4e9b3f4ec7c1fd98d65372131221f2a5a",
+    "sha": "c46cdd09d479dfcb254512ef723e0720d0428aab",
     "branch": "master"
   },
   "dot": {
-    "sha": "1a07555c75ff60383b2534c18d11c60a5b3759be",
+    "sha": "66bb26dd74119c8a95302db25d57d0dfcf4d700c",
     "branch": "master"
   },
   "axon": {
-    "sha": "ad46049136f806aea02dfc14a1fd0db1faa3b18f",
+    "sha": "e720a6201507cebb8f8feb0b9170389056ba0ad3",
     "branch": "master"
   },
   "assert": {
@@ -56,8 +56,8 @@
     "branch": "master"
   },
   "ph-scale-basics": {
-    "sha": "d92ac85f83f3db00ea721574f97ead698af79f69",
+    "sha": "571b888e8e815e34170a108c5b540951ca8ec173",
     "branch": "1.0"
   },
-  "comment": "# ph-scale-basics 1.0.0-rc.1 Tue Dec 17 2013 19:26:49 GMT-0700 (MST)"
+  "comment": "# ph-scale-basics 1.0.0-rc.2 Mon Dec 23 2013 11:54:53 GMT-0700 (MST)"
 }
