@@ -34,7 +34,7 @@ define( function( require ) {
   }
 
   SimLauncher.launch( function() {
-    var sim = new Sim( simTitle, [ new BasicsScreen() ], simOptions );
+    var sim = new Sim( simTitle, [ new BasicsScreen( { autoFillVolume: 0 } ) ], simOptions );
     sim.start();
   } );
 } );
