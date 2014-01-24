@@ -14,7 +14,7 @@ define( function( require ) {
   var SimLauncher = require( 'JOIST/SimLauncher' );
 
   // strings
-  var simTitle = require( 'string!PH_SCALE/ph-scale-basics.name' );
+  var simTitle = require( 'string!PH_SCALE_BASICS/ph-scale-basics.name' );
 
   var simOptions = {
     credits: {
