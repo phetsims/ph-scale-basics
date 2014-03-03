@@ -1,2 +1,2 @@
-This sim shares its model with the 'pH Scale' sim.
+This simulation consists of one screen from phet-scale.
 Please see the ph-scale repository for details.

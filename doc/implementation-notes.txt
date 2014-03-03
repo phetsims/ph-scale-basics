@@ -1,2 +1,2 @@
 This simulation consists of one screen from phet-scale.
-Please see the ph-scale repository for implementation details.
+Please see the ph-scale repository for details.
