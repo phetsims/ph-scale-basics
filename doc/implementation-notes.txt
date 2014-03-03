@@ -1,5 +1,2 @@
-Since most of the code used in this sim is shared with the 'pH Scale' sim,
-we chose to treat the code specific to this sim as a 'Basics' screen, and locate
-that code in the ph-scale repository under js/basics/.
-
-Please see the ph-scale repository for all other implementation details.
+This simulation consists of one screen from phet-scale.
+Please see the ph-scale repository for implementation details.
