@@ -1,3 +1,4 @@
+# 1.1.0 branched 8/19/14
 7/29/14 check in ph-scale-basics-128.png (website thumbnail)
 5/27/14 change 'imports' to 'modules' in require comments
 5/16/14 #38 fix: water faucet is disabled after switching solvents
