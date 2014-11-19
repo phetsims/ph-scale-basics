@@ -20,7 +20,7 @@
     "branch": "HEAD"
   },
   "ph-scale": {
-    "sha": "026cfe7e7a98f9ab2fe36b77dc33256c0e65ce72",
+    "sha": "cb4a6d9f0b0487c33aee00cac66f8396296f8c80",
     "branch": "1.1"
   },
   "phetcommon": {
@@ -32,7 +32,7 @@
     "branch": "HEAD"
   },
   "nitroglycerin": {
-    "sha": "53ec50a4c9ad9658966a3c6ea0536275d6a717ac",
+    "sha": "a1b4005b9a6062887955274a9d14c31dab69b93c",
     "branch": "master"
   },
   "kite": {
@@ -60,8 +60,8 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "674690f6c29631caa3087dc61f4df47e89d7b801",
+    "sha": "a83000fec68893f83bc3a4864a21c23cef009a57",
     "branch": "1.1"
   },
-  "comment": "# ph-scale-basics 1.1.0 Mon Aug 25 2014 09:30:03 GMT-0600 (MDT)"
+  "comment": "# ph-scale-basics 1.1.1 Tue Nov 18 2014 18:28:13 GMT-0700 (MST)"
 }

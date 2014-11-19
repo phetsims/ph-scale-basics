@@ -1,3 +1,4 @@
+11/18/14 check in dependencies.json for 1.1.1
 # 1.1.1 11/18/14
 11/18/14 ph-scale#54 replace 'Beer' with 'Orange Juice'
 8/25/14 check in dependencies.json for 1.1.0
