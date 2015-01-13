@@ -8,7 +8,7 @@
  */
 require.config( {
 
-  deps: ['ph-scale-basics-main'],
+  deps: [ 'ph-scale-basics-main' ],
 
   paths: {
 
