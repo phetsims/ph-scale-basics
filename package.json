@@ -6,21 +6,7 @@
   "phetLibs": [
     "ph-scale-basics",
     "ph-scale",
-    "assert",
-    "axon",
-    "babel",
-    "brand",
-    "chipper",
-    "dot",
-    "joist",
-    "kite",
-    "nitroglycerin",
-    "phet-core",
-    "phetcommon",
-    "scenery",
-    "scenery-phet",
-    "sherpa",
-    "sun"
+    "nitroglycerin"
   ],
   "repository": {
     "type": "git",
