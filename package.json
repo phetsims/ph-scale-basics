@@ -2,7 +2,8 @@
   "name": "ph-scale-basics",
   "version": "1.2.0-dev.1",
   "license": "GPLv3",
-  "simTitleStringKey": "PH_SCALE/ph-scale-basics.name",
+  "requirejsNamespace": "PH_SCALE_BASICS",
+  "simTitleStringKey": "PH_SCALE_BASICS/ph-scale-basics.name",
   "phetLibs": [
     "ph-scale-basics",
     "ph-scale",
