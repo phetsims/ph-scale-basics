@@ -15,7 +15,6 @@
   },
   "phet": {
     "requirejsNamespace": "PH_SCALE_BASICS",
-    "simTitleStringKey": "PH_SCALE_BASICS/ph-scale-basics.name",
     "phetLibs": [
       "ph-scale",
       "nitroglycerin"
