@@ -1,5 +1,5 @@
 {
-  "comment": "# ph-scale-basics 1.2.9-rc.1 Thu Apr 06 2017 01:51:55 GMT-0600 (MDT)",
+  "comment": "# ph-scale-basics 1.2.9 Fri Apr 07 2017 17:37:36 GMT-0600 (MDT)",
   "assert": {
     "sha": "3921bc3784dc67e9cbfa31cdec52b582fcfc68e7",
     "branch": "HEAD"
@@ -37,7 +37,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "ff083ee2b4efa6c9b67721e9f9cf50c7ad914981",
+    "sha": "3caf3c322606b3a5c9b5aa15295697a032c64ef1",
     "branch": "1.2"
   },
   "phet-core": {
