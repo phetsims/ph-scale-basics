@@ -1,5 +1,5 @@
 {
-  "comment": "# ph-scale-basics 1.2.14 Fri Sep 21 2018 17:41:40 GMT-0600 (MDT)",
+  "comment": "# ph-scale-basics 1.2.15-rc.1 Fri Sep 21 2018 20:07:41 GMT-0600 (MDT)",
   "assert": {
     "sha": "3921bc3784dc67e9cbfa31cdec52b582fcfc68e7",
     "branch": "HEAD"
@@ -14,7 +14,7 @@
   },
   "chipper": {
     "sha": "824083f26cfad13806a866c63e80af80d4c66a0b",
-    "branch": "ph-scale-basics-1.2"
+    "branch": "HEAD"
   },
   "dot": {
     "sha": "660f42411cdb789b8c6b99326fa82f4d8a83a42d",
@@ -37,7 +37,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "7cd0ef2758643a7dbb7f023571b3d4d57caf73c6",
+    "sha": "0876554013ccbbd28791717c07f0bbf0c96e0080",
     "branch": "1.2"
   },
   "phet-core": {
