@@ -1,4 +1,4 @@
-// Copyright 2013-2017, University of Colorado Boulder
+// Copyright 2013-2019, University of Colorado Boulder
 
 /**
  * Main entry point for the 'pH Scale: Basics' sim.
@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var MacroScreen = require( 'PH_SCALE/macro/MacroScreen' );
+  var PHScaleConstants = require( 'PH_SCALE/common/PHScaleConstants' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
 
@@ -17,14 +18,7 @@ define( function( require ) {
   var phScaleBasicsTitleString = require( 'string!PH_SCALE_BASICS/ph-scale-basics.title' );
 
   var simOptions = {
-    credits: {
-      leadDesign: 'Yuen-ying Carpenter',
-      softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
-      team: 'Julia Chamberlain, Trish Loeblein, Emily B. Moore, Ariel Paul, Katherine Perkins',
-      graphicArts: 'Sharon Siman-Tov',
-      qualityAssurance: 'Steele Dalton, Bryce Griebenow, Elise Morgan, Oliver Orejola, Benjamin Roberts, Bryan Yoelin',
-      thanks: 'Conversion of this simulation to HTML5 was funded in part by the Royal Society of Chemistry.'
-    }
+    credits: PHScaleConstants.CREDITS
   };
 
   SimLauncher.launch( function() {
