@@ -1,5 +1,5 @@
 {
-  "comment": "# ph-scale-basics 1.3.0-rc.1 Tue Jul 23 2019 09:32:40 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# ph-scale-basics 1.3.0-rc.1 Tue Jul 23 2019 10:09:37 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "d8a2e8992420327ff72a6fc4bb93ec76549ded0e",
     "branch": "HEAD"
@@ -26,7 +26,7 @@
   },
   "kite": {
     "sha": "41f5c22ed1108601513948221a6979af5337ee8f",
-    "branch": "ph-scale-basics-1.3"
+    "branch": "HEAD"
   },
   "nitroglycerin": {
     "sha": "02bb3655bd83d64983ccba41698949f5f6e50981",
@@ -37,7 +37,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "807a54bfad3945bcbb7b5010e1fde65a0af89a5c",
+    "sha": "5827c98118052c5458abc9fc55142939b0e7f49d",
     "branch": "1.3"
   },
   "phet-core": {
@@ -69,8 +69,8 @@
     "branch": "HEAD"
   },
   "scenery-phet": {
-    "sha": "c9db4d1cae0c64b1fe3bf6dc52d1c2dea9f40d40",
-    "branch": "HEAD"
+    "sha": "acdca789ba0217c817ae9801872937273109300e",
+    "branch": "ph-scale-basics-1.3"
   },
   "sherpa": {
     "sha": "2a32165bfe80cf50a85af442ff7073333418bd70",
