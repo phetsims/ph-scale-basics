@@ -69,7 +69,7 @@
     "branch": "HEAD"
   },
   "scenery-phet": {
-    "sha": "3a69c94da233779fc2f3c9639e8cf71ea82c8d7f",
+    "sha": "c9db4d1cae0c64b1fe3bf6dc52d1c2dea9f40d40",
     "branch": "HEAD"
   },
   "sherpa": {
@@ -77,7 +77,7 @@
     "branch": "HEAD"
   },
   "sun": {
-    "sha": "af72dd0bf01eadcb373b2c6f346fe482eaee4516",
+    "sha": "4556554a20c8bf9d44560386bb65ee39091731da",
     "branch": "HEAD"
   },
   "tambo": {
