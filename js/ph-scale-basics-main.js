@@ -5,17 +5,17 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var MacroScreen = require( 'PH_SCALE/macro/MacroScreen' );
-  var PHScaleConstants = require( 'PH_SCALE/common/PHScaleConstants' );
-  var Sim = require( 'JOIST/Sim' );
-  var SimLauncher = require( 'JOIST/SimLauncher' );
+  const MacroScreen = require( 'PH_SCALE/macro/MacroScreen' );
+  const PHScaleConstants = require( 'PH_SCALE/common/PHScaleConstants' );
+  const Sim = require( 'JOIST/Sim' );
+  const SimLauncher = require( 'JOIST/SimLauncher' );
 
   // strings
-  var phScaleBasicsTitleString = require( 'string!PH_SCALE_BASICS/ph-scale-basics.title' );
+  const phScaleBasicsTitleString = require( 'string!PH_SCALE_BASICS/ph-scale-basics.title' );
 
   var simOptions = {
     credits: PHScaleConstants.CREDITS
