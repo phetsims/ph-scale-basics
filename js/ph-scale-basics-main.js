@@ -13,6 +13,7 @@ define( require => {
   const PHScaleConstants = require( 'PH_SCALE/common/PHScaleConstants' );
   const Sim = require( 'JOIST/Sim' );
   const SimLauncher = require( 'JOIST/SimLauncher' );
+  const Tandem = require( 'TANDEM/Tandem' );
 
   // strings
   const phScaleBasicsTitleString = require( 'string!PH_SCALE_BASICS/ph-scale-basics.title' );
@@ -23,7 +24,7 @@ define( require => {
 
   SimLauncher.launch( () => {
     const screens = [
-      new MacroScreen( { autoFillVolume: 0 } )
+      new MacroScreen( Tandem.ROOT.createTandem( 'macroScreen' ), { autoFillVolume: 0 } )
     ];
     const sim = new Sim( phScaleBasicsTitleString, screens, simOptions );
     sim.start();
