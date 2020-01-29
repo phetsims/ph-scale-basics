@@ -21,8 +21,11 @@ define( require => {
     credits: PHScaleConstants.CREDITS
   };
 
-  SimLauncher.launch( function() {
-    const sim = new Sim( phScaleBasicsTitleString, [ new MacroScreen( { autoFillVolume: 0 } ) ], simOptions );
+  SimLauncher.launch( () => {
+    const screens = [
+      new MacroScreen( { autoFillVolume: 0 } )
+    ];
+    const sim = new Sim( phScaleBasicsTitleString, screens, simOptions );
     sim.start();
   } );
 } );
