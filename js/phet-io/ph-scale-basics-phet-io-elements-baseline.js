@@ -1470,6 +1470,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "phScaleBasics.macroScreen.model.dropper.soluteProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<SoluteIO>"
+    },
     "phScaleBasics.macroScreen.model.dropper.visibleProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -1509,6 +1522,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<NumberIO>>"
     },
+    "phScaleBasics.macroScreen.model.solution": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
     "phScaleBasics.macroScreen.model.solution.pHProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -1522,8 +1548,21 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "DerivedPropertyIO<NullableIO<NumberIO>>"
     },
-    "phScaleBasics.macroScreen.model.solution.soluteVolumeProperty": {
+    "phScaleBasics.macroScreen.model.solution.soluteProperty": {
       "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "LinkedElementIO"
+    },
+    "phScaleBasics.macroScreen.model.solution.soluteVolumeProperty": {
+      "phetioDocumentation": "volume of solute in the solution",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -1535,8 +1574,8 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "phScaleBasics.macroScreen.model.solution.waterVolumeProperty": {
-      "phetioDocumentation": "",
+    "phScaleBasics.macroScreen.model.solution.volumeProperty": {
+      "phetioDocumentation": "total volume of the solution",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -1547,6 +1586,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
+    "phScaleBasics.macroScreen.model.solution.waterVolumeProperty": {
+      "phetioDocumentation": "volume of water in the solution",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
     },
     "phScaleBasics.macroScreen.model.waterFaucet.enabledProperty": {
       "phetioDocumentation": "",
@@ -2535,6 +2587,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "phScaleBasics.macroScreen.view.soluteComboBox.property": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "LinkedElementIO"
     },
     "phScaleBasics.macroScreen.view.soluteComboBox.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",

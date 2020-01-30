@@ -493,6 +493,19 @@ window.phet.phetio.phetioTypes = assert &&
       "supertype": "ObjectIO",
       "typeName": "FunctionIO(ObjectIO)=>VoidIO"
     },
+    "FunctionIO(SoluteIO,NullableIO<SoluteIO>)=>VoidIO": {
+      "documentation": "Wrapper for the built-in JS function type.<br><strong>Arguments:</strong> SoluteIO, NullableIO<SoluteIO><br><strong>Return Type:</strong> VoidIO",
+      "events": [],
+      "methodOrder": [],
+      "methods": {},
+      "parameterTypes": [
+        "SoluteIO",
+        "NullableIO<SoluteIO>",
+        "VoidIO"
+      ],
+      "supertype": "ObjectIO",
+      "typeName": "FunctionIO(SoluteIO,NullableIO<SoluteIO>)=>VoidIO"
+    },
     "FunctionIO(StringIO,NullableIO<StringIO>)=>VoidIO": {
       "documentation": "Wrapper for the built-in JS function type.<br><strong>Arguments:</strong> StringIO, NullableIO<StringIO><br><strong>Return Type:</strong> VoidIO",
       "events": [],
@@ -545,6 +558,14 @@ window.phet.phetio.phetioTypes = assert &&
       ],
       "supertype": "ObjectIO",
       "typeName": "FunctionIO(Vector2IO,NullableIO<Vector2IO>)=>VoidIO"
+    },
+    "LinkedElementIO": {
+      "documentation": "A LinkedElement",
+      "events": [],
+      "methodOrder": [],
+      "methods": {},
+      "supertype": "ObjectIO",
+      "typeName": "LinkedElementIO"
     },
     "NodeIO": {
       "documentation": "The base type for graphical and potentially interactive objects.  NodeIO has nested PropertyIO values for visibility, pickability and opacity.<br><br>Pickable can take one of three values:<br><ul><li>null: pass-through behavior. Nodes with input listeners are pickable, but nodes without input listeners won't block events for nodes behind it.</li><li>false: The node cannot be interacted with, and it blocks events for nodes behind it.</li><li>true: The node can be interacted with (if it has an input listener).</li></ul>For more about Scenery node pickability, please see <a href=\"http://phetsims.github.io/scenery/doc/implementation-notes#pickability\">http://phetsims.github.io/scenery/doc/implementation-notes#pickability</a>",
@@ -630,6 +651,17 @@ window.phet.phetio.phetioTypes = assert &&
       ],
       "supertype": "ObjectIO",
       "typeName": "NullableIO<SceneryEventIO>"
+    },
+    "NullableIO<SoluteIO>": {
+      "documentation": "A wrapper to wrap another IOType, adding support for null.",
+      "events": [],
+      "methodOrder": [],
+      "methods": {},
+      "parameterTypes": [
+        "SoluteIO"
+      ],
+      "supertype": "ObjectIO",
+      "typeName": "NullableIO<SoluteIO>"
     },
     "NullableIO<StringIO>": {
       "documentation": "A wrapper to wrap another IOType, adding support for null.",
@@ -1180,6 +1212,50 @@ window.phet.phetio.phetioTypes = assert &&
       "supertype": "ObjectIO",
       "typeName": "PropertyIO<NumberIO>"
     },
+    "PropertyIO<SoluteIO>": {
+      "documentation": "Observable values that send out notifications when the value changes. This differs from the traditional listener pattern in that added listeners also receive a callback with the current value when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.",
+      "events": [
+        "changed"
+      ],
+      "methodOrder": [
+        "link",
+        "lazyLink"
+      ],
+      "methods": {
+        "getValue": {
+          "documentation": "Gets the current value.",
+          "parameterTypes": [],
+          "returnType": "SoluteIO"
+        },
+        "lazyLink": {
+          "documentation": "Adds a listener which will be called when the value changes. This method is like \"link\", but without the current-value callback on registration. The listener takes two arguments, the new value and the previous value.",
+          "parameterTypes": [
+            "FunctionIO(SoluteIO,NullableIO<SoluteIO>)=>VoidIO"
+          ],
+          "returnType": "VoidIO"
+        },
+        "link": {
+          "documentation": "Adds a listener which will be called when the value changes. On registration, the listener is also called with the current value. The listener takes two arguments, the new value and the previous value.",
+          "parameterTypes": [
+            "FunctionIO(SoluteIO,NullableIO<SoluteIO>)=>VoidIO"
+          ],
+          "returnType": "VoidIO"
+        },
+        "setValue": {
+          "documentation": "Sets the value of the Property. If the value differs from the previous value, listeners are notified with the new value.",
+          "invocableForReadOnlyElements": false,
+          "parameterTypes": [
+            "SoluteIO"
+          ],
+          "returnType": "VoidIO"
+        }
+      },
+      "parameterTypes": [
+        "SoluteIO"
+      ],
+      "supertype": "ObjectIO",
+      "typeName": "PropertyIO<SoluteIO>"
+    },
     "PropertyIO<StringIO>": {
       "documentation": "Observable values that send out notifications when the value changes. This differs from the traditional listener pattern in that added listeners also receive a callback with the current value when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.",
       "events": [
@@ -1268,6 +1344,14 @@ window.phet.phetio.phetioTypes = assert &&
       "supertype": "ObjectIO",
       "typeName": "PropertyIO<Vector2IO>"
     },
+    "ReferenceIO": {
+      "documentation": "Uses reference identity for toStateObject/fromStateObject",
+      "events": [],
+      "methodOrder": [],
+      "methods": {},
+      "supertype": "ObjectIO",
+      "typeName": "ReferenceIO"
+    },
     "ResetAllButtonIO": {
       "documentation": "Button that performs an action while it is being pressed, and stops the action when released",
       "events": [
@@ -1307,6 +1391,14 @@ window.phet.phetio.phetioTypes = assert &&
       "methods": {},
       "supertype": "ObjectIO",
       "typeName": "SceneryEventIO"
+    },
+    "SoluteIO": {
+      "documentation": "the selected solute",
+      "events": [],
+      "methodOrder": [],
+      "methods": {},
+      "supertype": "ReferenceIO",
+      "typeName": "SoluteIO"
     },
     "StringIO": {
       "documentation": "Wrapper for the built-in JS string type",
