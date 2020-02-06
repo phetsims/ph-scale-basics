@@ -1392,6 +1392,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SoluteIO"
     },
+    "phScaleBasics.global.model.solutes.batteryAcid.nameProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<StringIO>"
+    },
     "phScaleBasics.global.model.solutes.blood": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -1404,6 +1417,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "SoluteIO"
+    },
+    "phScaleBasics.global.model.solutes.blood.nameProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<StringIO>"
     },
     "phScaleBasics.global.model.solutes.chickenSoup": {
       "phetioDocumentation": "",
@@ -1418,6 +1444,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SoluteIO"
     },
+    "phScaleBasics.global.model.solutes.chickenSoup.nameProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<StringIO>"
+    },
     "phScaleBasics.global.model.solutes.coffee": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -1430,6 +1469,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "SoluteIO"
+    },
+    "phScaleBasics.global.model.solutes.coffee.nameProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<StringIO>"
     },
     "phScaleBasics.global.model.solutes.drainCleaner": {
       "phetioDocumentation": "",
@@ -1444,6 +1496,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SoluteIO"
     },
+    "phScaleBasics.global.model.solutes.drainCleaner.nameProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<StringIO>"
+    },
     "phScaleBasics.global.model.solutes.handSoap": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -1456,6 +1521,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "SoluteIO"
+    },
+    "phScaleBasics.global.model.solutes.handSoap.nameProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<StringIO>"
     },
     "phScaleBasics.global.model.solutes.milk": {
       "phetioDocumentation": "",
@@ -1470,6 +1548,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SoluteIO"
     },
+    "phScaleBasics.global.model.solutes.milk.nameProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<StringIO>"
+    },
     "phScaleBasics.global.model.solutes.orangeJuice": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -1482,6 +1573,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "SoluteIO"
+    },
+    "phScaleBasics.global.model.solutes.orangeJuice.nameProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<StringIO>"
     },
     "phScaleBasics.global.model.solutes.soda": {
       "phetioDocumentation": "",
@@ -1496,6 +1600,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SoluteIO"
     },
+    "phScaleBasics.global.model.solutes.soda.nameProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<StringIO>"
+    },
     "phScaleBasics.global.model.solutes.spit": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -1508,6 +1625,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "SoluteIO"
+    },
+    "phScaleBasics.global.model.solutes.spit.nameProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<StringIO>"
     },
     "phScaleBasics.global.model.solutes.vomit": {
       "phetioDocumentation": "",
@@ -1522,6 +1652,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SoluteIO"
     },
+    "phScaleBasics.global.model.solutes.vomit.nameProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<StringIO>"
+    },
     "phScaleBasics.global.model.solutes.water": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -1534,6 +1677,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "SoluteIO"
+    },
+    "phScaleBasics.global.model.solutes.water.nameProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<StringIO>"
     },
     "phScaleBasics.macroScreen.activeProperty": {
       "phetioDocumentation": "Indicates whether the screen is currently displayed in the simulation.  For single-screen simulations, there is only one screen and it is always active.",
