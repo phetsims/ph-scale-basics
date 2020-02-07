@@ -24,7 +24,7 @@ define( require => {
 
   SimLauncher.launch( () => {
     const screens = [
-      new MacroScreen( Tandem.ROOT.createTandem( 'macroScreen' ), { autoFillVolume: 0 } )
+      new MacroScreen( Tandem.ROOT.createTandem( 'macroScreen' ), { autoFillEnabled: false } )
     ];
     const sim = new Sim( phScaleBasicsTitleString, screens, simOptions );
     sim.start();
