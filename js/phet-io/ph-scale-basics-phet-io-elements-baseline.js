@@ -1,7 +1,6 @@
-
 /* eslint-disable */
 window.phet.phetio.phetioElementsBaseline = assert &&
-  {
+{
     "phScaleBasics.general.activeProperty": {
       "phetioDocumentation": "Determines whether the entire simulation is running and processing user input. Setting this property to false pauses the simulation, and prevents user interaction.",
       "phetioDynamicElement": false,
