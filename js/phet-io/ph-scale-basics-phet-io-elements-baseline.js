@@ -1782,19 +1782,6 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "phScaleBasics.macroScreen.model.dropper.emptyProperty": {
-      "phetioDocumentation": "whether the dropper is empty",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
     "phScaleBasics.macroScreen.model.dropper.enabledProperty": {
       "phetioDocumentation": "whether the button on the dropper is enabled",
       "phetioDynamicElement": false,
