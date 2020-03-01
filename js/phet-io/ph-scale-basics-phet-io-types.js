@@ -1565,7 +1565,7 @@ window.phet.phetio.phetioTypes = assert &&
       "typeName": "ScreenIO"
     },
     "SoluteIO": {
-      "documentation": "the selected solute",
+      "documentation": "a solute",
       "events": [],
       "methodOrder": [],
       "methods": {},
