@@ -2159,6 +2159,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "FaucetNodeIO"
     },
+    "phScaleBasics.macroScreen.view.drainFaucetNode.flowRateProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "LinkedElementIO"
+    },
     "phScaleBasics.macroScreen.view.drainFaucetNode.inputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -3991,6 +4004,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "FaucetNodeIO"
+    },
+    "phScaleBasics.macroScreen.view.waterFaucetNode.faucetNode.flowRateProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "LinkedElementIO"
     },
     "phScaleBasics.macroScreen.view.waterFaucetNode.faucetNode.inputListener": {
       "phetioDocumentation": "",
