@@ -1900,7 +1900,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "phScaleBasics.macroScreen.model.solution.pHProperty": {
-      "phetioDocumentation": "the pH of the solution",
+      "phetioDocumentation": "pH of the solution",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -1938,7 +1938,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "phScaleBasics.macroScreen.model.solution.volumeProperty": {
+    "phScaleBasics.macroScreen.model.solution.totalVolumeProperty": {
       "phetioDocumentation": "total volume of the solution",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
