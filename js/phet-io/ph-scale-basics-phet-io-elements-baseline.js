@@ -1933,9 +1933,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioHighFrequency": false,
       "phetioIsArchetype": false,
       "phetioPlayback": false,
-      "phetioReadOnly": true,
+      "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "NumberPropertyIO"
     },
     "phScaleBasics.macroScreen.model.solution.totalVolumeProperty": {
@@ -1959,9 +1959,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioHighFrequency": false,
       "phetioIsArchetype": false,
       "phetioPlayback": false,
-      "phetioReadOnly": true,
+      "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "NumberPropertyIO"
     },
     "phScaleBasics.macroScreen.model.waterFaucet.enabledProperty": {
