@@ -3654,7 +3654,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "phScaleBasics.macroScreen.view.soluteComboBox.listBox.sodaPop": {
+    "phScaleBasics.macroScreen.view.soluteComboBox.listBox.soda": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -3667,7 +3667,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "phScaleBasics.macroScreen.view.soluteComboBox.listBox.sodaPop.opacityProperty": {
+    "phScaleBasics.macroScreen.view.soluteComboBox.listBox.soda.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -3680,7 +3680,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "phScaleBasics.macroScreen.view.soluteComboBox.listBox.sodaPop.pickableProperty": {
+    "phScaleBasics.macroScreen.view.soluteComboBox.listBox.soda.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -3693,7 +3693,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "phScaleBasics.macroScreen.view.soluteComboBox.listBox.sodaPop.visibleProperty": {
+    "phScaleBasics.macroScreen.view.soluteComboBox.listBox.soda.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
