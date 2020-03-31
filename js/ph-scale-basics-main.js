@@ -12,7 +12,7 @@ import PHScaleConstants from '../../ph-scale/js/common/PHScaleConstants.js';
 import PHScaleQueryParameters from '../../ph-scale/js/common/PHScaleQueryParameters.js';
 import MacroScreen from '../../ph-scale/js/macro/MacroScreen.js';
 import Tandem from '../../tandem/js/Tandem.js';
-import phScaleBasicsStrings from './ph-scale-basics-strings.js';
+import phScaleBasicsStrings from './phScaleBasicsStrings.js';
 
 const phScaleBasicsTitleString = phScaleBasicsStrings[ 'ph-scale-basics' ].title;
 
