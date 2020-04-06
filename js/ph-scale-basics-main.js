@@ -14,21 +14,20 @@ import MacroScreen from '../../ph-scale/js/macro/MacroScreen.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import phScaleBasicsStrings from './phScaleBasicsStrings.js';
 
-const phScaleBasicsTitleString = phScaleBasicsStrings[ 'ph-scale-basics' ].title;
-
-const simOptions = {
-  credits: PHScaleConstants.CREDITS
-};
-
 // If autoFill query parameter was not in the URL, change the default.
 if ( !QueryStringMachine.containsKey( 'autoFill' ) ) {
   PHScaleQueryParameters.autoFill = false;
 }
 
 SimLauncher.launch( () => {
+
   const screens = [
     new MacroScreen( Tandem.ROOT.createTandem( 'macroScreen' ) )
   ];
-  const sim = new Sim( phScaleBasicsTitleString, screens, simOptions );
+
+  const sim = new Sim( phScaleBasicsStrings[ 'ph-scale-basics' ].title, screens, {
+    credits: PHScaleConstants.CREDITS
+  } );
+
   sim.start();
 } );
