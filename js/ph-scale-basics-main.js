@@ -7,7 +7,7 @@
  */
 
 import Sim from '../../joist/js/Sim.js';
-import SimLauncher from '../../joist/js/SimLauncher.js';
+import simLauncher from '../../joist/js/simLauncher.js';
 import PHScaleConstants from '../../ph-scale/js/common/PHScaleConstants.js';
 import PHScaleQueryParameters from '../../ph-scale/js/common/PHScaleQueryParameters.js';
 import MacroScreen from '../../ph-scale/js/macro/MacroScreen.js';
@@ -19,7 +19,7 @@ if ( !QueryStringMachine.containsKey( 'autoFill' ) ) {
   PHScaleQueryParameters.autoFill = false;
 }
 
-SimLauncher.launch( () => {
+simLauncher.launch( () => {
 
   const screens = [
     new MacroScreen( Tandem.ROOT.createTandem( 'macroScreen' ) )
