@@ -37,7 +37,7 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "phScaleBasics.global.model.solutes.water.nameProperty": {
       "phetioFeatured": true
     },
-    "phScaleBasics.macroScreen.model.autoFillEnabledProperty": {
+    "phScaleBasics.macroScreen.model.autofillEnabledProperty": {
       "phetioFeatured": true
     },
     "phScaleBasics.macroScreen.model.dropper.soluteProperty": {

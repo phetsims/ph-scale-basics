@@ -14,9 +14,9 @@ import MacroScreen from '../../ph-scale/js/macro/MacroScreen.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import phScaleBasicsStrings from './phScaleBasicsStrings.js';
 
-// If autoFill query parameter was not in the URL, change the default.
-if ( !QueryStringMachine.containsKey( 'autoFill' ) ) {
-  PHScaleQueryParameters.autoFill = false;
+// If autofill query parameter was not in the URL, change the default.
+if ( !QueryStringMachine.containsKey( 'autofill' ) ) {
+  PHScaleQueryParameters.autofill = false;
 }
 
 simLauncher.launch( () => {
