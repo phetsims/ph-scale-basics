@@ -1,5 +1,5 @@
 {
-  "comment": "# ph-scale-basics 1.4.0-rc.1 Thu Jul 23 2020 13:44:22 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# ph-scale-basics 1.4.0-rc.1 Mon Jul 27 2020 11:53:20 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "1a41cef653bbed1025af5768bea958d7e3e0f8ae",
     "branch": "HEAD"
@@ -37,7 +37,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "a84740a1500d72f90a587f451a5f40c59d164cb5",
+    "sha": "8188a8ef927572622d8a71c5aff28cd94196e625",
     "branch": "1.4"
   },
   "phet-core": {
@@ -74,7 +74,7 @@
   },
   "scenery-phet": {
     "sha": "49610e9bc4f4e0e17daf4f0d17d2d473c589e143",
-    "branch": "ph-scale-basics-1.4"
+    "branch": "HEAD"
   },
   "sherpa": {
     "sha": "f2d6e320646c6e0b63d5c8c30cc34953629b25a8",
@@ -85,8 +85,8 @@
     "branch": "HEAD"
   },
   "sun": {
-    "sha": "d02b85cde1eb4300c21dee814d2d021fcde5d501",
-    "branch": "HEAD"
+    "sha": "fde02be2fa284f55aa631d02991ffe6d5f8645fb",
+    "branch": "ph-scale-basics-1.4"
   },
   "tambo": {
     "sha": "683753ba15fdcde540ce0b1fe08918e6f33e55a5",
