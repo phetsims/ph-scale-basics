@@ -1,5 +1,5 @@
 {
-  "comment": "# ph-scale-basics 1.4.0-rc.1 Thu Jul 30 2020 16:48:20 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# ph-scale-basics 1.4.0-rc.1 Thu Jul 30 2020 17:26:03 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "1a41cef653bbed1025af5768bea958d7e3e0f8ae",
     "branch": "HEAD"
@@ -13,8 +13,8 @@
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "42d99b76037dae2c72d7fb660954c8bc072e8e60",
-    "branch": "HEAD"
+    "sha": "b05838a95918a1df54098c2846123b9954a18e81",
+    "branch": "ph-scale-basics-1.4"
   },
   "dot": {
     "sha": "1039f4fbfbdb62bfaddf3c850d73b25b4a00cbde",
@@ -37,7 +37,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "bec961522b472bf0fc6cf6c29a232ec9f53fee16",
+    "sha": "8a038c0218b454d2b69d7af8b6e953f16eeb5c6a",
     "branch": "1.4"
   },
   "phet-core": {
@@ -65,8 +65,8 @@
     "branch": "HEAD"
   },
   "query-string-machine": {
-    "sha": "599036755406fff368d329f42f6c9f7613f9ce2c",
-    "branch": "HEAD"
+    "sha": "b75ea49a1ac48de6a7d874be492b9b16a5cce7cd",
+    "branch": "ph-scale-basics-1.4"
   },
   "scenery": {
     "sha": "517ee0f088162fc6b43c76c694aea831317cd963",
@@ -82,7 +82,7 @@
   },
   "studio": {
     "sha": "80eb691a864e1a8b521c1f1f7783738c99d5d432",
-    "branch": "ph-scale-basics-1.4"
+    "branch": "HEAD"
   },
   "sun": {
     "sha": "fde02be2fa284f55aa631d02991ffe6d5f8645fb",
