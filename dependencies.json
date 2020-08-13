@@ -1,5 +1,5 @@
 {
-  "comment": "# ph-scale-basics 1.4.0-rc.1 Mon Aug 10 2020 13:32:47 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# ph-scale-basics 1.4.0-rc.1 Thu Aug 13 2020 12:20:00 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "1a41cef653bbed1025af5768bea958d7e3e0f8ae",
     "branch": "HEAD"
@@ -33,11 +33,11 @@
     "branch": "HEAD"
   },
   "ph-scale": {
-    "sha": "8b5d58e7f6de48969ed26c62e797521a6d85e41d",
-    "branch": "HEAD"
+    "sha": "7b277d98f03b0db2cab79ccc83f902c8b4cbe72e",
+    "branch": "ph-scale-basics-1.4"
   },
   "ph-scale-basics": {
-    "sha": "8fa9270151e863e0f960fcc8413af465bf67170e",
+    "sha": "bb984d4464d1cb42cec0773f3fb3d4dc952a27ac",
     "branch": "1.4"
   },
   "phet-core": {
@@ -49,8 +49,8 @@
     "branch": "HEAD"
   },
   "phet-io-client-guides": {
-    "sha": "74d023534e16a220c973d2e9399ba27ee4ade72b",
-    "branch": "HEAD"
+    "sha": "f564a2703540f82ca2ae940689bf9741fce66aa3",
+    "branch": "ph-scale-basics-1.4"
   },
   "phet-io-wrappers": {
     "sha": "83b52c4701c637475d723d3e3891cdc1646ada39",
@@ -86,7 +86,7 @@
   },
   "sun": {
     "sha": "4e4fc6ff7d01b2d400a85f3f14541077ad017dc0",
-    "branch": "ph-scale-basics-1.4"
+    "branch": "HEAD"
   },
   "tambo": {
     "sha": "683753ba15fdcde540ce0b1fe08918e6f33e55a5",
