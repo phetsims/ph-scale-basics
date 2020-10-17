@@ -73,9 +73,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "phScaleBasics.macroScreen.view.pHMeterNode.pHIndicatorNode.numberDisplay.visibleProperty": {
       "phetioFeatured": true
     },
-    "phScaleBasics.macroScreen.view.pHMeterNode.probeNode.pickableProperty": {
-      "phetioFeatured": true
-    },
     "phScaleBasics.macroScreen.view.volumeIndicatorNode.visibleProperty": {
       "phetioFeatured": true
     },
