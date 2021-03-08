@@ -1,5 +1,5 @@
 {
-  "comment": "# ph-scale-basics 1.4.0-rc.2 Thu Sep 03 2020 16:32:39 GMT-0800 (Alaska Daylight Time)",
+  "comment": "# ph-scale-basics 1.4.0-rc.2 Mon Mar 08 2021 15:36:42 GMT-0500 (Eastern Standard Time)",
   "assert": {
     "sha": "1a41cef653bbed1025af5768bea958d7e3e0f8ae",
     "branch": "HEAD"
@@ -14,7 +14,7 @@
   },
   "chipper": {
     "sha": "783cf397a5761b6a8905b554bb6d89bdd8032653",
-    "branch": "ph-scale-basics-1.4"
+    "branch": "HEAD"
   },
   "dot": {
     "sha": "1039f4fbfbdb62bfaddf3c850d73b25b4a00cbde",
@@ -37,7 +37,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "47a2489b1ed30c43fb001e6b1b67f7ab61af90be",
+    "sha": "7a53ec2a6171720e6263e0673641ca48ae4be374",
     "branch": "1.4"
   },
   "phet-core": {
@@ -61,8 +61,8 @@
     "branch": "HEAD"
   },
   "phetmarks": {
-    "sha": "84c64b71ee50c13b7453eb276513118c1525f7db",
-    "branch": "HEAD"
+    "sha": "616eb4864c397546422f35c713db3a167f773a03",
+    "branch": "ph-scale-basics-1.4"
   },
   "query-string-machine": {
     "sha": "b75ea49a1ac48de6a7d874be492b9b16a5cce7cd",
