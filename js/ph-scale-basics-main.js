@@ -26,7 +26,10 @@ simLauncher.launch( () => {
   ];
 
   const sim = new Sim( phScaleBasicsStrings[ 'ph-scale-basics' ].title, screens, {
-    credits: PHScaleConstants.CREDITS
+    credits: PHScaleConstants.CREDITS,
+
+    // phet-io options
+    phetioDesigned: true
   } );
 
   sim.start();
