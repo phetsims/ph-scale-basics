@@ -3,11 +3,17 @@
 /**
  * Auto-generated from modulify, DO NOT manually modify.
  */
-
+/* eslint-disable */
 import getStringModule from '../../chipper/js/getStringModule.js';
 import phScaleBasics from './phScaleBasics.js';
 
-const phScaleBasicsStrings = getStringModule( 'PH_SCALE_BASICS' );
+type StringsType = {
+  'ph-scale-basics': {
+    'title': string
+  }
+};
+
+const phScaleBasicsStrings = getStringModule( 'PH_SCALE_BASICS' ) as StringsType;
 
 phScaleBasics.register( 'phScaleBasicsStrings', phScaleBasicsStrings );
 
