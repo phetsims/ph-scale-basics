@@ -11,7 +11,7 @@ import phScaleBasics from './phScaleBasics.js';
 type StringsType = {
   'ph-scale-basics': {
     'title': string;
-    'titleProperty': TReadOnlyProperty<string>;
+    'titleStringProperty': TReadOnlyProperty<string>;
   }
 };
 
