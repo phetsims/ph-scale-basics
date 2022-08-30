@@ -25,7 +25,7 @@ simLauncher.launch( () => {
     new MacroScreen( Tandem.ROOT.createTandem( 'macroScreen' ) )
   ];
 
-  const sim = new Sim( phScaleBasicsStrings[ 'ph-scale-basics' ].title, screens, {
+  const sim = new Sim( phScaleBasicsStrings[ 'ph-scale-basics' ].titleStringProperty, screens, {
     credits: PHScaleConstants.CREDITS,
 
     // phet-io options
