@@ -79,7 +79,7 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "phScaleBasics.macroScreen.view.waterFaucetNode.visibleProperty": {
       "phetioFeatured": true
     },
-    "phScaleBasics.macroScreen.view.waterFaucetNode.waterLabelNode.visibleProperty": {
+    "phScaleBasics.macroScreen.view.waterFaucetNode.waterText.visibleProperty": {
       "phetioFeatured": true
     }
   };
