@@ -22,7 +22,9 @@ if ( !QueryStringMachine.containsKey( 'autofill' ) ) {
 simLauncher.launch( () => {
 
   const screens = [
-    new MacroScreen( Tandem.ROOT.createTandem( 'macroScreen' ) )
+    new MacroScreen( {
+      tandem: Tandem.ROOT.createTandem( 'macroScreen' )
+    } )
   ];
 
   const sim = new Sim( phScaleBasicsStrings[ 'ph-scale-basics' ].titleStringProperty, screens, {
