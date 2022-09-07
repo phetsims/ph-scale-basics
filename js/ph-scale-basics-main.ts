@@ -12,7 +12,7 @@ import PHScaleConstants from '../../ph-scale/js/common/PHScaleConstants.js';
 import PHScaleQueryParameters from '../../ph-scale/js/common/PHScaleQueryParameters.js';
 import MacroScreen from '../../ph-scale/js/macro/MacroScreen.js';
 import Tandem from '../../tandem/js/Tandem.js';
-import phScaleBasicsStrings from './phScaleBasicsStrings.js';
+import PhScaleBasicsStrings from './PhScaleBasicsStrings.js';
 
 // If autofill query parameter was not in the URL, change the default.
 if ( !QueryStringMachine.containsKey( 'autofill' ) ) {
@@ -27,7 +27,7 @@ simLauncher.launch( () => {
     } )
   ];
 
-  const sim = new Sim( phScaleBasicsStrings[ 'ph-scale-basics' ].titleStringProperty, screens, {
+  const sim = new Sim( PhScaleBasicsStrings[ 'ph-scale-basics' ].titleStringProperty, screens, {
     credits: PHScaleConstants.CREDITS,
 
     // phet-io options
