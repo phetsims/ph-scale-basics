@@ -1,42 +1,6 @@
 /* eslint-disable */
 window.phet.preloads.phetio.phetioElementsOverrides =
   {
-    "phScaleBasics.global.model.solutes.batteryAcid.nameProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.global.model.solutes.blood.nameProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.global.model.solutes.chickenSoup.nameProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.global.model.solutes.coffee.nameProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.global.model.solutes.drainCleaner.nameProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.global.model.solutes.handSoap.nameProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.global.model.solutes.milk.nameProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.global.model.solutes.orangeJuice.nameProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.global.model.solutes.soda.nameProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.global.model.solutes.spit.nameProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.global.model.solutes.vomit.nameProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.global.model.solutes.water.nameProperty": {
-      "phetioFeatured": true
-    },
     "phScaleBasics.macroScreen.model.autofillEnabledProperty": {
       "phetioFeatured": true
     },
