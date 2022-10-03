@@ -21,6 +21,9 @@
       "phet-io",
       "adapted-from-phet"
     ],
+    "simFeatures": {
+      "supportsSound": true
+    },
     "simulation": true,
     "phet-io": {
       "compareDesignedAPIChanges": true
