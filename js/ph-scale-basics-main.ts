@@ -29,7 +29,6 @@ simLauncher.launch( () => {
 
   const sim = new Sim( PhScaleBasicsStrings[ 'ph-scale-basics' ].titleStringProperty, screens, {
     credits: PHScaleConstants.CREDITS,
-    hasKeyboardHelpContent: true,
     phetioDesigned: true
   } );
 
