@@ -1,5 +1,5 @@
 {
-  "comment": "# ph-scale-basics 1.6.0-rc.1 Mon Jan 23 2023 08:48:38 GMT-0700 (Mountain Standard Time)",
+  "comment": "# ph-scale-basics 1.6.0-rc.1 Fri Jan 27 2023 16:53:45 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "c13a8c7741d95fbd8e37619c66ebcca8686dffe7",
     "branch": "HEAD"
@@ -13,7 +13,7 @@
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "ec8635f10271045c241f15dfe3b31a1fd7a77c8a",
+    "sha": "132fbed90f680f4349a3b066b56d54a0982e3a38",
     "branch": "HEAD"
   },
   "dot": {
@@ -33,35 +33,31 @@
     "branch": "HEAD"
   },
   "perennial-alias": {
-    "sha": "16d39f8966e28c476225cf6b6be76aaa3041622e",
+    "sha": "c518e16b71a11644708c2353cb2d3a432f7cc07e",
     "branch": "HEAD"
   },
   "ph-scale": {
-    "sha": "eabd404a164f54a79638337a967f2b58429a620e",
-    "branch": "ph-scale-basics-1.6"
-  },
-  "ph-scale-basics": {
-    "sha": "3d8cfc33910c49bf46f5a547dcd13406c42d999f",
-    "branch": "1.6"
+    "sha": "265589f43663f29c517175370a35ba8183552016",
+    "branch": "HEAD"
   },
   "phet-core": {
-    "sha": "2f09b71014ea7b926fcfa13ccad40059595adde9",
+    "sha": "5c02adbbb919b654fb672656bc0a197341c99a77",
     "branch": "HEAD"
   },
   "phet-io": {
-    "sha": "4b9e6bcdd1e56da53f8203aadf47d4b0d44437ff",
+    "sha": "b9338adfb39dd7d8a1785f1002997852ac0f0bc1",
     "branch": "HEAD"
   },
   "phet-io-sim-specific": {
-    "sha": "17a238116eccd4001a58ce4c52d4a685cd97b19d",
-    "branch": "ph-scale-basics-1.6"
+    "sha": "3896a99db8a1236790eaa1eba0b62e8bd595fce6",
+    "branch": "HEAD"
   },
   "phet-io-wrappers": {
-    "sha": "f5eff9c5f89c0d0e671458d92ec5896e05f77d6e",
+    "sha": "831c7320bceaf40903d576c6466e0a6e14eb5e73",
     "branch": "HEAD"
   },
   "phetcommon": {
-    "sha": "e7674057cdb1517733ec73bf180e821067c9d183",
+    "sha": "1827eec1ddd7400a0fd7efed66c70eb567d940e9",
     "branch": "HEAD"
   },
   "phetmarks": {
@@ -73,7 +69,7 @@
     "branch": "HEAD"
   },
   "scenery": {
-    "sha": "ab5e79db4e89786a9c1ecbc9f00fed63fabcf46d",
+    "sha": "cf0eca6e35e130dadb7b2dc2ed78cbe64efc4fb1",
     "branch": "HEAD"
   },
   "scenery-phet": {
@@ -85,7 +81,7 @@
     "branch": "HEAD"
   },
   "studio": {
-    "sha": "d28e617013d93181a02ec233b00fe30cc84cf284",
+    "sha": "68ce7b82fccedb0d45c3e65addc445c890390fb2",
     "branch": "HEAD"
   },
   "sun": {
@@ -97,7 +93,7 @@
     "branch": "HEAD"
   },
   "tandem": {
-    "sha": "4336567087403eafb8af3203afa61f035c965ed0",
+    "sha": "f6eaa90f09bf472be6a71bb54a92ba2e5bd3c888",
     "branch": "HEAD"
   },
   "twixt": {
