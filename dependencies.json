@@ -1,5 +1,5 @@
 {
-  "comment": "# ph-scale-basics 1.6.0-rc.2 Fri Jan 27 2023 17:56:50 GMT-0700 (Mountain Standard Time)",
+  "comment": "# ph-scale-basics 1.6.0-rc.2 Fri Feb 03 2023 15:28:29 GMT-0500 (Eastern Standard Time)",
   "assert": {
     "sha": "c13a8c7741d95fbd8e37619c66ebcca8686dffe7",
     "branch": "HEAD"
@@ -21,8 +21,8 @@
     "branch": "HEAD"
   },
   "joist": {
-    "sha": "3397bd992007e3c5c2d3efe8a2f95439a0adac65",
-    "branch": "HEAD"
+    "sha": "8cec7f633f8c0c122c8d39303f4c544020c7b7fe",
+    "branch": "ph-scale-basics-1.6"
   },
   "kite": {
     "sha": "93747215c3e10c9f11af61d8b530f669687d973b",
@@ -41,7 +41,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "65e6d945d2c6c1bc974d2fa3a70a25c802e24cb0",
+    "sha": "bf3cd39a94543d54cac65b44030440d371d34d57",
     "branch": "1.6"
   },
   "phet-core": {
