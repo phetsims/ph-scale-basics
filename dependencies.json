@@ -1,5 +1,5 @@
 {
-  "comment": "# ph-scale-basics 1.6.1 Fri Feb 24 2023 19:40:31 GMT-0700 (Mountain Standard Time)",
+  "comment": "# ph-scale-basics 1.6.1 Wed Mar 01 2023 17:17:40 GMT-0500 (Eastern Standard Time)",
   "assert": {
     "sha": "c13a8c7741d95fbd8e37619c66ebcca8686dffe7",
     "branch": "HEAD"
@@ -41,7 +41,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "2a1291aad0a7a00eb7f41c326ba10d209f2e0a28",
+    "sha": "c2cd12b7056ebb9b649625ee4f766aa7daaf08a3",
     "branch": "1.6"
   },
   "phet-core": {
@@ -53,8 +53,8 @@
     "branch": "HEAD"
   },
   "phet-io-sim-specific": {
-    "sha": "90bc39af60afbbcf4bd44ad295bb4bb43eba46fd",
-    "branch": "HEAD"
+    "sha": "c24584c8ba58bc64f349e5d70716795950c6e09a",
+    "branch": "ph-scale-basics-1.6"
   },
   "phet-io-wrappers": {
     "sha": "831c7320bceaf40903d576c6466e0a6e14eb5e73",
@@ -85,8 +85,8 @@
     "branch": "HEAD"
   },
   "studio": {
-    "sha": "68ce7b82fccedb0d45c3e65addc445c890390fb2",
-    "branch": "HEAD"
+    "sha": "fc65c1577dcd92ebf43cbc40dfaa9ba8d77ce606",
+    "branch": "ph-scale-basics-1.6"
   },
   "sun": {
     "sha": "21bd965d24a31fa4a878c3c4532e3eb58cda0408",
