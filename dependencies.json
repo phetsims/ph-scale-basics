@@ -5,7 +5,7 @@
     "branch": "HEAD"
   },
   "axon": {
-    "sha": "241b3032d009c0bb7c57dc471112fc3743b687ab",
+    "sha": "44b7f82a68967b349815121743c96e98ddc9b39d",
     "branch": "HEAD"
   },
   "brand": {
@@ -41,7 +41,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "5ddcfefee757d84b8751f0c35622ad632765d9cc",
+    "sha": "0a6561d662a72461620bcbbe0a0ef1aee0b5e742",
     "branch": "1.6"
   },
   "phet-core": {
@@ -97,7 +97,7 @@
     "branch": "HEAD"
   },
   "tandem": {
-    "sha": "f6eaa90f09bf472be6a71bb54a92ba2e5bd3c888",
+    "sha": "28702993bb4efc43ccde58b3cbfdeb923f51e38a",
     "branch": "HEAD"
   },
   "twixt": {
