@@ -16,15 +16,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "phScaleBasics.macroScreen.model.solution.waterVolumeProperty": {
       "phetioFeatured": true
     },
-    "phScaleBasics.macroScreen.view.beakerNode.tickMarks.tickLabels.visibleProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.macroScreen.view.beakerNode.tickMarks.visibleProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.macroScreen.view.drainFaucetNode.visibleProperty": {
-      "phetioFeatured": true
-    },
     "phScaleBasics.macroScreen.view.pHMeterNode.pHIndicatorNode.numberDisplay.visibleProperty": {
       "phetioFeatured": true
     }
