@@ -25,13 +25,7 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "phScaleBasics.macroScreen.view.drainFaucetNode.visibleProperty": {
       "phetioFeatured": true
     },
-    "phScaleBasics.macroScreen.view.neutralIndicatorNode.visibleProperty": {
-      "phetioFeatured": true
-    },
     "phScaleBasics.macroScreen.view.pHMeterNode.pHIndicatorNode.numberDisplay.visibleProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.macroScreen.view.volumeIndicatorNode.visibleProperty": {
       "phetioFeatured": true
     }
   };
