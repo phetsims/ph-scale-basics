@@ -33,11 +33,5 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     },
     "phScaleBasics.macroScreen.view.volumeIndicatorNode.visibleProperty": {
       "phetioFeatured": true
-    },
-    "phScaleBasics.macroScreen.view.waterFaucetNode.visibleProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.macroScreen.view.waterFaucetNode.waterText.visibleProperty": {
-      "phetioFeatured": true
     }
   };
