@@ -1,15 +1,6 @@
 /* eslint-disable */
 window.phet.preloads.phetio.phetioElementsOverrides =
   {
-    "phScaleBasics.macroScreen.model.autofillEnabledProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.macroScreen.model.dropper.soluteProperty": {
-      "phetioFeatured": true
-    },
-    "phScaleBasics.macroScreen.model.dropper.visibleProperty": {
-      "phetioFeatured": true
-    },
     "phScaleBasics.macroScreen.model.pHMeter.pHProperty": {
       "phetioFeatured": true
     },
