@@ -41,7 +41,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "7b46d90fcbee69d4247f1394be63087bc6071617",
+    "sha": "7bd1998b7678682cbc58a8c7898bcc3a49fafc71",
     "branch": "1.6"
   },
   "phet-core": {
@@ -57,7 +57,7 @@
     "branch": "HEAD"
   },
   "phet-io-wrappers": {
-    "sha": "87939e241626e94c831e49161b01fb520ccd7d9d",
+    "sha": "ed0320f59b92ec1918bdfcb4f0b0af934437355b",
     "branch": "HEAD"
   },
   "phetcommon": {
@@ -65,7 +65,7 @@
     "branch": "HEAD"
   },
   "phetmarks": {
-    "sha": "5b3084a2ea029dec575e5dd00752b4013056c13b",
+    "sha": "1966493b6adaa413850cf675116117f6e7143b5c",
     "branch": "HEAD"
   },
   "query-string-machine": {
@@ -97,7 +97,7 @@
     "branch": "HEAD"
   },
   "tandem": {
-    "sha": "28702993bb4efc43ccde58b3cbfdeb923f51e38a",
+    "sha": "ec994a086f630e8d6c14ceac19287e3a74131833",
     "branch": "HEAD"
   },
   "twixt": {
