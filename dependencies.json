@@ -41,7 +41,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "7bc419530a70528f079c817d930545cee0e08416",
+    "sha": "c5871fe88abffcff2370d079b6e7253865789295",
     "branch": "1.6"
   },
   "phet-core": {
@@ -49,15 +49,15 @@
     "branch": "HEAD"
   },
   "phet-io": {
-    "sha": "005c7954b230e1987dc396652bf7c9678bde22f4",
+    "sha": "de883f9cf9f6af0250f47bc369a97cf3a4803929",
     "branch": "HEAD"
   },
   "phet-io-sim-specific": {
-    "sha": "102473726ab8fb5137d9cc219c314bc2036f6451",
+    "sha": "b7861042bbc6b82bd13714584e3ba68b7628314a",
     "branch": "HEAD"
   },
   "phet-io-wrappers": {
-    "sha": "71d480a58e7445937d4cd3ef3927e2b6363a4ab0",
+    "sha": "a40733ee136067fc24ac8cefa5c13661c8062661",
     "branch": "HEAD"
   },
   "phetcommon": {
