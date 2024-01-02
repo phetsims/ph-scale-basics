@@ -41,7 +41,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "fbbafbbcfb3b42470c6cae35b615d8a9f4fb914e",
+    "sha": "309ca3da04412a9c6996abae19344777faf9752b",
     "branch": "1.6"
   },
   "phet-core": {
@@ -85,7 +85,7 @@
     "branch": "HEAD"
   },
   "studio": {
-    "sha": "c2f4b9df955d93375bd2bc0258a598e6e9bc4902",
+    "sha": "e83bcf3b79506a89e35be1d12a1eb944fd87105f",
     "branch": "HEAD"
   },
   "sun": {
