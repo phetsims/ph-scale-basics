@@ -5,7 +5,7 @@
     "branch": "HEAD"
   },
   "axon": {
-    "sha": "89aa4e2b839b31499519cc8f24d587f3b2ff0e88",
+    "sha": "2c9a4f3068523da531ce988aaaec9fa13bfcba37",
     "branch": "HEAD"
   },
   "brand": {
@@ -41,7 +41,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "8fccbeb598117706e52e97f54acf22aae994bb47",
+    "sha": "1fd2b4d83f113bd23b250281e8dcc403be5d8449",
     "branch": "1.6"
   },
   "phet-core": {
