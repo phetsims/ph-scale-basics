@@ -20,6 +20,18 @@ export default () => {
     }
   };
 
+  const flowRateToEnum = flowRate => {
+    if ( flowRate === 0 ) {
+      return 'off';
+    }
+    else if ( flowRate < 0.15 ) {
+      return 'slow';
+    }
+    else {
+      return 'fast';
+    }
+  };
+
   return phet.joist.DescriptionContext.registerLogic( {
     launch( descriptionContext, descriptionStrings ) {
       context = descriptionContext;
@@ -47,13 +59,64 @@ export default () => {
         const isAutofillingProperty = context.get( 'phScaleBasics.macroScreen.model.isAutofillingProperty' );
 
         // Water faucet
+        const waterFaucetNode = context.get( 'phScaleBasics.macroScreen.view.waterFaucetNode.faucetNode' );
         const waterFaucetEnabledProperty = context.get( 'phScaleBasics.macroScreen.model.waterFaucet.enabledProperty' );
         const waterFaucetFlowRateProperty = context.get( 'phScaleBasics.macroScreen.model.waterFaucet.flowRateProperty' );
 
         // Drain faucet
+        const drainFaucetNode = context.get( 'phScaleBasics.macroScreen.view.drainFaucetNode' );
         const drainFaucetEnabledProperty = context.get( 'phScaleBasics.macroScreen.model.drainFaucet.enabledProperty' );
         const drainFaucetFlowRateProperty = context.get( 'phScaleBasics.macroScreen.model.drainFaucet.flowRateProperty' );
 
+        { // liquid level changing alerts
+
+          const beakerNode = context.get( 'phScaleBasics.macroScreen.view.beakerNode' );
+
+          const isLiquidLevelChangingProperty = context.createDerivedProperty( [
+            isDispensingProperty,
+            waterFaucetFlowRateProperty,
+            drainFaucetFlowRateProperty
+          ], ( isDispensing, waterFaucetFlowRate, drainFaucetFlowRate ) => {
+            return isDispensing || waterFaucetFlowRate > 0 || drainFaucetFlowRate > 0;
+          } );
+
+          let callbackTimer = context.createCallbackTimer( {
+            callback: () => {
+              beakerNode.alertDescriptionUtterance( strings.liquidChangingAlert(
+                waterFaucetFlowRateProperty.value > drainFaucetFlowRateProperty.value,
+                Math.round( solutionTotalVolumeProperty.value * 10 ) / 10
+              ) );
+            },
+            delay: 1000,
+            interval: 1000
+          } );
+          isLiquidLevelChangingProperty.lazyLink( isLiquidLevelChanging => {
+            callbackTimer.stop();
+
+            if ( isLiquidLevelChanging ) {
+              callbackTimer.start();
+            }
+            else {
+              beakerNode.alertDescriptionUtterance( strings.liquidChangingDoneAlert(
+                totalVolumeToEnum( solutionTotalVolumeProperty.value )
+              ) );
+            }
+          } );
+        }
+
+        { // water faucet
+          context.nodeSet( waterFaucetNode, 'accessibleName', strings.waterFaucetAccessibleName() );
+          context.nodeSet( waterFaucetNode, 'pdomCreateAriaValueText', value => {
+            return strings.faucetAriaValueText( flowRateToEnum( value ) );
+          } );
+        }
+
+        { // drain faucet
+          context.nodeSet( drainFaucetNode, 'accessibleName', strings.drainFaucetAccessibleName() );
+          context.nodeSet( drainFaucetNode, 'pdomCreateAriaValueText', value => {
+            return strings.faucetAriaValueText( flowRateToEnum( value ) );
+          } );
+        }
 
         const simStateDescriptionNode = new phet.scenery.Node( {
           tagName: 'p'
@@ -114,13 +177,9 @@ export default () => {
           context.get( 'phScaleBasics.macroScreen.view.resetAllButton' )
         ] );
 
-        const alerter = new phet.sceneryPhet.Alerter( {
-          alertToVoicing: false,
-          descriptionAlertNode: macroScreenView
-        } );
-
+        const dropperNodeButton = context.get( 'phScaleBasics.macroScreen.view.dropperNode.button' );
         context.lazyLink( isDispensingProperty, isDispensing => {
-          alerter.alert( strings.dropperDispensingAlert( isDispensing ) );
+          dropperNodeButton.alertDescriptionUtterance( strings.dropperDispensingAlert( isDispensing ) );
         } );
       }
     },

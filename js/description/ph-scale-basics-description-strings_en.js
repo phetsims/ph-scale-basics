@@ -26,6 +26,12 @@ export default () => {
     full: 'full'
   };
 
+  const flowRateMap = {
+    off: 'off',
+    slow: 'slow',
+    fast: 'fast'
+  };
+
   return phet.joist.DescriptionContext.registerStrings( {
     locale: 'en',
     screenSummary() {
@@ -33,15 +39,33 @@ export default () => {
     },
     screenSummarySimStateDescription(
       solute,
-      totalVolume
+      totalVolumeEnum
     ) {
-      return `The solute is ${soluteMap[ solute ]}, and the total volume is ${totalVolumeMap[ totalVolume ]}.`;
+      return `The solute is ${soluteMap[ solute ]}, and the total volume is ${totalVolumeMap[ totalVolumeEnum ]}.`;
     },
     soluteComboBoxAccessibleName() {
       return 'Solute';
     },
     soluteName( solute ) {
       return soluteMap[ solute ];
+    },
+    waterFaucetAccessibleName() { return 'water faucet'; },
+    drainFaucetAccessibleName() { return 'drain faucet'; },
+    faucetAriaValueText(
+      flowRateEnum
+    ) {
+      return `Faucet is ${flowRateMap[ flowRateEnum ]}`;
+    },
+    liquidChangingAlert(
+      goingUp,
+      totalVolumeValue
+    ) {
+      return `Level going ${goingUp ? 'up' : 'down'}, now at ${totalVolumeValue} liters.`;
+    },
+    liquidChangingDoneAlert(
+      totalVolumeEnum
+    ) {
+      return `Level stable, now at ${totalVolumeMap[ totalVolumeEnum ]}.`;
     },
     dropperDispensingAlert(
       isDispensing
