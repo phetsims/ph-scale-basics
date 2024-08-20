@@ -104,14 +104,15 @@ export default () => {
         }
 
         // pdomOrder
-        // context.nodeSet( macroScreenView.pdomPlayAreaNode, 'pdomOrder', [
-        //   context.get( 'phScaleBasics.macroScreen.view.dropperNode.button' ),
-        //   context.get( 'phScaleBasics.macroScreen.view.soluteComboBox' ),
-        //   context.get( 'phScaleBasics.macroScreen.view.waterFaucetNode.faucetNode' ),
-        //   context.get( 'phScaleBasics.macroScreen.view.drainFaucetNode' ),
-        //   context.get( 'phScaleBasics.macroScreen.view.pHMeterNode.probeNode' ),
-        //   context.get( 'phScaleBasics.macroScreen.view.resetAllButton' )
-        // ] );
+        context.nodeSet( macroScreenView.pdomPlayAreaNode, 'pdomOrder', [
+          context.get( 'phScaleBasics.macroScreen.view.pHMeterNode' ),
+          context.get( 'phScaleBasics.macroScreen.view.soluteComboBox' ),
+          context.get( 'phScaleBasics.macroScreen.view.soluteListParent' ),
+          context.get( 'phScaleBasics.macroScreen.view.dropperNode.button' ),
+          context.get( 'phScaleBasics.macroScreen.view.waterFaucetNode' ),
+          context.get( 'phScaleBasics.macroScreen.view.drainFaucetNode' ),
+          context.get( 'phScaleBasics.macroScreen.view.resetAllButton' )
+        ] );
 
         const alerter = new phet.sceneryPhet.Alerter( {
           alertToVoicing: false,
@@ -128,6 +129,9 @@ export default () => {
     },
     removed( tandemID, obj ) {
       // Will be called when an object is dynamically removed after sim start-up
+    },
+    dispose() {
+
     }
   } );
 };
