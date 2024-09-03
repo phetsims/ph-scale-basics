@@ -56,6 +56,9 @@ export default () => {
     ) {
       return `Faucet is ${flowRateMap[ flowRateEnum ]}`;
     },
+    faucetContextResponse( waterFlowing ) {
+      return waterFlowing ? 'Water is flowing' : 'Water is off.';
+    },
     liquidChangingAlert(
       goingUp,
       totalVolumeValue

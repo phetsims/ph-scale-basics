@@ -110,6 +110,12 @@ export default () => {
           context.nodeSet( waterFaucetNode, 'pdomCreateAriaValueText', value => {
             return strings.faucetAriaValueText( flowRateToEnum( value ) );
           } );
+
+          context.nodeSet( waterFaucetNode, 'keyboardStep', 0.1 );
+
+          context.nodeSet( waterFaucetNode, 'pdomCreateContextResponseAlert', value => {
+            return strings.faucetContextResponse( value > 0 );
+          } );
         }
 
         { // drain faucet
