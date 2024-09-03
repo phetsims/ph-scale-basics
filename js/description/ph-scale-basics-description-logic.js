@@ -52,6 +52,7 @@ export default () => {
         // pH Meter
         const pHMeterPHProperty = context.get( 'phScaleBasics.macroScreen.model.pHMeter.pHProperty' );
         const pHMeterPositionProperty = context.get( 'phScaleBasics.macroScreen.model.pHMeter.probe.positionProperty' );
+        const phMeterProbeNode = context.get( 'phScaleBasics.macroScreen.view.pHMeterNode.probeNode' );
 
         // Dropper
         const dropperEnabledProperty = context.get( 'phScaleBasics.macroScreen.model.dropper.enabledProperty' );
@@ -118,13 +119,30 @@ export default () => {
           } );
         }
 
-        const simStateDescriptionNode = new phet.scenery.Node( {
+        { // describe probe movement
+          const utterance = context.createUtterance( {
+            alert: 'The probe moved!',
+            announcerOptions: {
+              ariaLivePriority: phet.utteranceQueue.AriaLive.ASSERTIVE
+            }
+          } );
+
+          context.multilink( [
+            pHMeterPositionProperty
+          ], (
+            probePosition
+          ) => {
+            phMeterProbeNode.alertDescriptionUtterance( utterance );
+          } );
+        }
+
+        const simStateDescriptionNode = context.createNode( {
           tagName: 'p'
         } );
 
-        context.nodeSet( macroScreenView, 'screenSummaryContent', new phet.scenery.Node( {
+        context.nodeSet( macroScreenView, 'screenSummaryContent', context.createNode( {
           children: [
-            new phet.scenery.Node( {
+            context.createNode( {
               tagName: 'p',
               innerContent: strings.screenSummary()
             } ),
