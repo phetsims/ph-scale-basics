@@ -1,6 +1,7 @@
 // Copyright 2024, University of Colorado Boulder
 
 // @author Jonathan Olson <jonathan.olson@colorado.edu>
+// @author Taliesn Smith <taliesin.smith@colorado.edu>
 
 /* eslint-disable */
 
@@ -142,17 +143,25 @@ export default () => {
           } );
         }
 
-        const simStateDescriptionNode = context.createNode( {
+        const dynamicScreenSummaryNode = context.createNode( {
           tagName: 'p'
         } );
 
         context.nodeSet( macroScreenView, 'screenSummaryContent', context.createNode( {
           children: [
-            context.createNode( {
+             new phet.scenery.Node( {
               tagName: 'p',
-              innerContent: strings.screenSummary()
+              innerContent: strings.screenSummaryP1()
             } ),
-            simStateDescriptionNode
+            new phet.scenery.Node( {
+              tagName: 'p',
+              innerContent: strings.screenSummaryP2()
+            } ),
+            dynamicScreenSummaryNode,
+            new phet.scenery.Node( {
+              tagName: 'p',
+              innerContent: strings.screenSummaryP3()
+            } )
           ]
         } ) );
 
@@ -163,9 +172,13 @@ export default () => {
           solute,
           solutionTotalVolume
         ) => {
-          simStateDescriptionNode.innerContent = strings.screenSummarySimStateDescription(
+          // 
+          dynamicScreenSummaryNode.innerContent = strings.dynamicScreenSummary(
             solute.tandemName,
-            totalVolumeToEnum( solutionTotalVolume )
+            totalVolumeToEnum( solutionTotalVolume ),
+            solutionPHProperty.value,
+            solutionTotalVolumeProperty.value, //needs rounding
+            
           );
         } );
 
