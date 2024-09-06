@@ -1,6 +1,7 @@
 // Copyright 2024, University of Colorado Boulder
 
 // @author Jonathan Olson <jonathan.olson@colorado.edu>
+// @author Taliesin Smith <taliesin.smith@colorado.edu>
 
 // eslint-disable
 
@@ -34,14 +35,23 @@ export default () => {
 
   return phet.joist.DescriptionContext.registerStrings( {
     locale: 'en',
-    screenSummary() {
-      return 'Place description of the screen here, or break into multiple paragraphs';
+    screenSummaryP1() {
+      return 'The Play Area contains a drainable beaker, a solution dropper, water faucet, and a movable pH probe. Water faucet and solution dropper sit above the beaker. The dropper dispenses a number of everyday liquids one at a time.';
     },
-    screenSummarySimStateDescription(
+    screenSummaryP2() {
+      return 'The Control Area has a button to reset the sim.';
+    },
+    screenSummaryP3() {
+      return 'Add solution to beaker and play.';
+    },
+    dynamicScreenSummary(
       solute,
-      totalVolumeEnum
+      totalVolumeEnum,
+       solutionPH,
+       totalVolume
     ) {
-      return `The solute is ${soluteMap[ solute ]}, and the total volume is ${totalVolumeMap[ totalVolumeEnum ]}.`;
+        //Currently, {{spit}} solution has a pH of {{7.02}} and is {{almost neutral}}. Solution is {{clear}} with {{lots of}} added water. Beaker is {{close to full}} at {{1.00}} liters.
+      return `Currently, ${soluteMap[ solute ]} solution has a pH of ${solutionPH}. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${totalVolume} liters.`;
     },
     soluteComboBoxAccessibleName() {
       return 'Solute';
