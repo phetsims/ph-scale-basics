@@ -47,10 +47,10 @@ export default () => {
     dynamicScreenSummary(
       solute,
       totalVolumeEnum,
-       solutionPH,
-       totalVolume
+      solutionPH,
+      totalVolume
     ) {
-        //Currently, {{spit}} solution has a pH of {{7.02}} and is {{almost neutral}}. Solution is {{clear}} with {{lots of}} added water. Beaker is {{close to full}} at {{1.00}} liters.
+      //Currently, {{spit}} solution has a pH of {{7.02}} and is {{almost neutral}}. Solution is {{clear}} with {{lots of}} added water. Beaker is {{close to full}} at {{1.00}} liters.
       return `Currently, ${soluteMap[ solute ]} solution has a pH of ${solutionPH}. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${totalVolume} liters.`;
     },
     soluteComboBoxAccessibleName() {
@@ -62,7 +62,7 @@ export default () => {
     dropperAccessibleName() { return 'Dropper'; },
     phMeterProbeAccessibleName() { return 'pH Probe'; },
     waterFaucetAccessibleName() { return 'Water Faucet'; },
-    waterFaucetHelpText() {return 'Add water to solution in beaker.'},
+    waterFaucetHelpText() {return 'Add water to solution in beaker.'; },
     drainFaucetAccessibleName() { return 'Drain'; },
     faucetAriaValueText(
       flowRateEnum
