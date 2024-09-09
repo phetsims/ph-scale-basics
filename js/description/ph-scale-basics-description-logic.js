@@ -19,7 +19,7 @@ export default () => {
     else {
       return 'full';
     }
-  };
+  };        
 
   const flowRateToEnum = flowRate => {
     if ( flowRate === 0 ) {
@@ -56,6 +56,7 @@ export default () => {
         const phMeterProbeNode = context.get( 'phScaleBasics.macroScreen.view.pHMeterNode.probeNode' );
 
         // Dropper
+        const dropperNodeButton = context.get( 'phScaleBasics.macroScreen.view.dropperNode.button');
         const dropperEnabledProperty = context.get( 'phScaleBasics.macroScreen.model.dropper.enabledProperty' );
         const isDispensingProperty = context.get( 'phScaleBasics.macroScreen.model.dropper.isDispensingProperty' );
         const isAutofillingProperty = context.get( 'phScaleBasics.macroScreen.model.isAutofillingProperty' );
@@ -104,6 +105,14 @@ export default () => {
               ) );
             }
           } );
+        }
+        
+        { //dropper
+          context.nodeSet( dropperNodeButton, 'accessibleName', strings.dropperAccessibleName() );
+        }
+        
+        { //pH Meter Probe
+          context.nodeSet( phMeterProbeNode, 'accessibleName', strings.phMeterProbeAccessibleName() );
         }
 
         { // water faucet
@@ -205,16 +214,15 @@ export default () => {
 
         // pdomOrder
         context.nodeSet( macroScreenView.pdomPlayAreaNode, 'pdomOrder', [
-          context.get( 'phScaleBasics.macroScreen.view.pHMeterNode' ),
           context.get( 'phScaleBasics.macroScreen.view.soluteComboBox' ),
           context.get( 'phScaleBasics.macroScreen.view.soluteListParent' ),
           context.get( 'phScaleBasics.macroScreen.view.dropperNode.button' ),
+          context.get( 'phScaleBasics.macroScreen.view.pHMeterNode' ),
           context.get( 'phScaleBasics.macroScreen.view.waterFaucetNode' ),
           context.get( 'phScaleBasics.macroScreen.view.drainFaucetNode' ),
           context.get( 'phScaleBasics.macroScreen.view.resetAllButton' )
         ] );
 
-        const dropperNodeButton = context.get( 'phScaleBasics.macroScreen.view.dropperNode.button' );
         context.lazyLink( isDispensingProperty, isDispensing => {
           dropperNodeButton.alertDescriptionUtterance( strings.dropperDispensingAlert( isDispensing ) );
         } );

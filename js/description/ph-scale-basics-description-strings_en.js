@@ -54,13 +54,15 @@ export default () => {
       return `Currently, ${soluteMap[ solute ]} solution has a pH of ${solutionPH}. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${totalVolume} liters.`;
     },
     soluteComboBoxAccessibleName() {
-      return 'Solute';
+      return 'Solution';
     },
     soluteName( solute ) {
       return soluteMap[ solute ];
     },
-    waterFaucetAccessibleName() { return 'water faucet'; },
-    drainFaucetAccessibleName() { return 'drain faucet'; },
+    dropperAccessibleName() { return 'Dropper'; },
+    phMeterProbeAccessibleName() { return 'pH Probe'; },
+    waterFaucetAccessibleName() { return 'Water Faucet'; },
+    drainFaucetAccessibleName() { return 'Drain'; },
     faucetAriaValueText(
       flowRateEnum
     ) {
