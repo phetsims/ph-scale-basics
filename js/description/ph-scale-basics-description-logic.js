@@ -42,6 +42,9 @@ export default () => {
       if ( macroScreen ) {
         const macroScreenView = context.get( 'phScaleBasics.macroScreen.view' );
 
+        // Beaker heading
+        const beakerNode = context.get( 'phScaleBasics.macroScreen.view.beakerNode' );
+        
         // solution
         //const soluteProperty = context.get( 'phScaleBasics.macroScreen.model.solution.soluteProperty' );
         const soluteProperty = context.get( 'phScaleBasics.macroScreen.model.dropper.soluteProperty' ); // TODO: why was this not defined?
@@ -71,9 +74,15 @@ export default () => {
         const drainFaucetEnabledProperty = context.get( 'phScaleBasics.macroScreen.model.drainFaucet.enabledProperty' );
         const drainFaucetFlowRateProperty = context.get( 'phScaleBasics.macroScreen.model.drainFaucet.flowRateProperty' );
 
+         { //Beaker section
+          context.nodeSet( beakerNode, 'tagName', "div");
+          context.nodeSet( beakerNode, 'labelTagName', "h3");
+          context.nodeSet( beakerNode, 'labelContent', "The Beaker");
+        }
+        
+        
+        
         { // liquid level changing alerts
-
-          const beakerNode = context.get( 'phScaleBasics.macroScreen.view.beakerNode' );
 
           const isLiquidLevelChangingProperty = context.createDerivedProperty( [
             isDispensingProperty,
@@ -117,6 +126,7 @@ export default () => {
 
         { // water faucet
           context.nodeSet( waterFaucetNode, 'accessibleName', strings.waterFaucetAccessibleName() );
+          context.nodeSet( waterFaucetNode, 'helpText', strings.waterFaucetHelpText() );
           context.nodeSet( waterFaucetNode, 'pdomCreateAriaValueText', value => {
             return strings.faucetAriaValueText( flowRateToEnum( value ) );
           } );
@@ -214,6 +224,7 @@ export default () => {
 
         // pdomOrder
         context.nodeSet( macroScreenView.pdomPlayAreaNode, 'pdomOrder', [
+          beakerNode,
           context.get( 'phScaleBasics.macroScreen.view.soluteComboBox' ),
           context.get( 'phScaleBasics.macroScreen.view.soluteListParent' ),
           context.get( 'phScaleBasics.macroScreen.view.dropperNode.button' ),

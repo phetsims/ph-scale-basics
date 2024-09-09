@@ -62,6 +62,7 @@ export default () => {
     dropperAccessibleName() { return 'Dropper'; },
     phMeterProbeAccessibleName() { return 'pH Probe'; },
     waterFaucetAccessibleName() { return 'Water Faucet'; },
+    waterFaucetHelpText() {return 'Add water to solution in beaker.'},
     drainFaucetAccessibleName() { return 'Drain'; },
     faucetAriaValueText(
       flowRateEnum
