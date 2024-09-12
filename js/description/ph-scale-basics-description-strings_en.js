@@ -3,9 +3,14 @@
 // @author Jonathan Olson <jonathan.olson@colorado.edu>
 // @author Taliesin Smith <taliesin.smith@colorado.edu>
 
-// eslint-disable
+/* eslint-disable */
 
 export default () => {
+
+  /*********************************************
+   * Enumeration Mappings (enumeration value => string)
+   *********************************************/
+
   const soluteMap = {
     batteryAcid: 'battery acid',
     blood: 'blood',
@@ -35,6 +40,11 @@ export default () => {
 
   return phet.joist.DescriptionContext.registerStrings( {
     locale: 'en',
+
+    /*********************************************
+     * Screen Summary State Descriptions
+     *********************************************/
+
     screenSummaryP1() {
       return 'The Play Area contains a drainable beaker, a solution dropper, water faucet, and a movable pH probe. Water faucet and solution dropper sit above the beaker. The dropper dispenses a number of everyday liquids one at a time.';
     },
@@ -43,15 +53,6 @@ export default () => {
     },
     screenSummaryP3() {
       return 'Add solution to beaker and play.';
-    },
-    beakerHeading() {
-      return 'The Beaker';
-    },
-    pHMeterHeading() {
-      return 'pH Meter and Read Out';
-    },
-    controlsHeading() {
-      return 'Beaker and pH Meter Controls';
     },
     dynamicScreenSummary(
       solute,
@@ -62,6 +63,21 @@ export default () => {
       //Currently, {{spit}} solution has a pH of {{7.02}} and is {{almost neutral}}. Solution is {{clear}} with {{lots of}} added water. Beaker is {{close to full}} at {{1.00}} liters.
       return `Currently, ${soluteMap[ solute ]} solution has a pH of ${solutionPH}. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${totalVolume} liters.`;
     },
+
+    /*********************************************
+     * Play Area State Descriptions
+     *********************************************/
+
+    beakerHeading() {
+      return 'The Beaker';
+    },
+    pHMeterHeading() {
+      return 'pH Meter and Read Out';
+    },
+    phMeterProbeAccessibleName() { return 'pH Probe'; },
+    controlsHeading() {
+      return 'Beaker and pH Meter Controls';
+    },
     soluteComboBoxAccessibleName() {
       return 'Solution';
     },
@@ -69,19 +85,40 @@ export default () => {
       return soluteMap[ solute ];
     },
     dropperAccessibleName() { return 'Dropper'; },
-    phMeterProbeAccessibleName() { return 'pH Probe'; },
     waterFaucetAccessibleName() { return 'Water Faucet'; },
-    waterFaucetHelpText() {return 'Add water to solution in beaker.'; },
+    waterFaucetHelpText() { return 'Add water to solution in beaker.'; },
     drainFaucetAccessibleName() { return 'Drain'; },
-    drainFaucetHelpText() {return 'Open to drain solution from beaker.'; },
+    drainFaucetHelpText() { return 'Open to drain solution from beaker.'; },
     faucetAriaValueText(
       flowRateEnum
     ) {
       return `Faucet is ${flowRateMap[ flowRateEnum ]}`;
     },
+
+    /*********************************************
+     * Control Area State Descriptions
+     *********************************************/
+
+    /*********************************************
+     * Object Responses
+     *********************************************/
+
+    phMeterProbeMovedAlert() { return 'The probe moved!' },
+
+    dropperDispensingAlert(
+      isDispensing
+    ) {
+      return isDispensing ? 'Dispensing' : 'Not dispensing';
+    },
+
+    /*********************************************
+     * Context Responses
+     *********************************************/
+
     faucetContextResponse( waterFlowing ) {
       return waterFlowing ? 'Water is flowing' : 'Water is off.';
     },
+
     liquidChangingAlert(
       goingUp,
       totalVolumeValue
@@ -92,11 +129,6 @@ export default () => {
       totalVolumeEnum
     ) {
       return `Level stable, now at ${totalVolumeMap[ totalVolumeEnum ]}.`;
-    },
-    dropperDispensingAlert(
-      isDispensing
-    ) {
-      return isDispensing ? 'Dispensing' : 'Not dispensing';
     }
   } );
 };
