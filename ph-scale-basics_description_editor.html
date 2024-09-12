@@ -12,6 +12,8 @@
 
   <title>pH Scale Description Editor</title>
 
+  <script src="../sherpa/lib/acorn-8.12.1.js"></script>
+
   <style>
     html {
       font-family: Arial, Helvetica, sans-serif;
@@ -32,6 +34,11 @@
 
     .alert_copy_container ul {
       -webkit-padding-start: 1.1em
+    }
+
+    .syntax-error {
+      border: 1px solid red;
+      background-color: rgba(255,0,0,0.3);
     }
 
     /* This class was found online as a way to preserve an iframe aspect ratio,
@@ -318,17 +325,57 @@
     reloadStrings();
   }
 
-  const runCode = async code => {
+  // codeMirror TextMarker
+  const logicTextMarkProperty = { value: null };
+  const stringsTextMarkProperty = { value: null };
+
+  const runCode = async ( code, isLogic ) => {
+    const textMarkProperty = isLogic ? logicTextMarkProperty : stringsTextMarkProperty;
+
+    if ( textMarkProperty.value ) {
+      textMarkProperty.value.clear();
+      textMarkProperty.value = null;
+    }
+
     const errorContainer = document.querySelector( '#error-container' );
     errorContainer.style.display = 'none';
 
-    try {
-      // eslint-disable-next-line no-undef
-      await iframe.contentWindow.phet.joist.DescriptionContext.externalLoad( code );
-    }
-    catch( e ) {
+    // eslint-disable-next-line no-undef
+    const error = await iframe.contentWindow.phet.joist.DescriptionContext.externalLoad( code );
+
+    if ( error ) {
+
+      const editor = isLogic ? logicEditor : stringsEditor;
+
+      let message = error.message;
+      let line = error.line;
+      let column = error.column;
+
+      if ( error.error.name === 'SyntaxError' ) {
+        try {
+          // eslint-disable-next-line no-undef
+          acorn.parse( code, { ecmaVersion: 'latest', sourceType: 'module' } );
+        }
+        catch( acornError ) {
+          message = acornError.message + ' / ' + message;
+          line = acornError.loc.line;
+          column = acornError.loc.column;
+        }
+      }
+
       errorContainer.style.display = 'block';
-      errorContainer.innerHTML = `<pre>${e.toString()}</pre>`;
+      errorContainer.innerHTML = `${isLogic ? 'Logic' : 'Strings'} error, line: ${line}<br>${message}`;
+
+      textMarkProperty.value = editor.markText( {
+        line: line - 1,
+        ch: column - 1
+      }, {
+        line: line,
+        ch: 0
+      }, {
+        className: 'syntax-error',
+        title: message
+      } );
     }
   };
 
@@ -336,7 +383,7 @@
     // TODO: generalize this to all sims https://github.com/phetsims/joist/issues/941
     localStorage.setItem( 'ph-scale-basics-description-logic.js', logicEditor.getValue() );
 
-    await runCode( editor.getValue() );
+    await runCode( editor.getValue(), true );
   } );
 
   stringsEditor.on( 'change', async editor => {
@@ -344,7 +391,7 @@
     // TODO: generalize locales https://github.com/phetsims/joist/issues/941
     localStorage.setItem( 'ph-scale-basics-description-strings_en.js', stringsEditor.getValue() );
 
-    await runCode( editor.getValue() );
+    await runCode( editor.getValue(), false );
   } );
 
   // Inject our plugins on load
@@ -358,8 +405,8 @@
     // Sent by Joist due to the postMessage* query parameters
     if ( data.type === 'load' ) {
 
-      await runCode( logicEditor.getValue() );
-      await runCode( stringsEditor.getValue() );
+      await runCode( stringsEditor.getValue(), false );
+      await runCode( logicEditor.getValue(), true );
     }
   } );
 </script>
