@@ -45,6 +45,10 @@ export default () => {
         // Beaker heading
         const beakerNode = context.get( 'phScaleBasics.macroScreen.view.beakerNode' );
         
+        // pH Meter heading
+        const pHMeterNode = context.get( 'phScaleBasics.macroScreen.view.pHMeterNode' );
+        
+        
         // solution
         //const soluteProperty = context.get( 'phScaleBasics.macroScreen.model.solution.soluteProperty' );
         const soluteProperty = context.get( 'phScaleBasics.macroScreen.model.dropper.soluteProperty' ); // TODO: why was this not defined?
@@ -74,13 +78,25 @@ export default () => {
         const drainFaucetEnabledProperty = context.get( 'phScaleBasics.macroScreen.model.drainFaucet.enabledProperty' );
         const drainFaucetFlowRateProperty = context.get( 'phScaleBasics.macroScreen.model.drainFaucet.flowRateProperty' );
 
-         { //Beaker section
+       { //Beaker section
           context.nodeSet( beakerNode, 'tagName', "div");
           context.nodeSet( beakerNode, 'labelTagName', "h3");
-          context.nodeSet( beakerNode, 'labelContent', "The Beaker");
+          context.nodeSet( beakerNode, 'labelContent', strings.beakerHeading());
         }
         
+        { //pH Meter section
+          context.nodeSet( pHMeterNode, 'tagName', "div");
+          context.nodeSet( pHMeterNode, 'labelTagName', "h3");
+          context.nodeSet( pHMeterNode, 'labelContent', strings.pHMeterHeading());
+        }
         
+       // { //Controls section
+          const controlsHeading = context.createNode( {
+            tagName: 'h3',
+            innerContent: strings.controlsHeading()
+          } );
+        macroScreenView.addChild(controlsHeading);
+       // }
         
         { // liquid level changing alerts
 
@@ -140,6 +156,7 @@ export default () => {
 
         { // drain faucet
           context.nodeSet( drainFaucetNode, 'accessibleName', strings.drainFaucetAccessibleName() );
+          context.nodeSet( drainFaucetNode, 'helpText', strings.drainFaucetHelpText() );
           context.nodeSet( drainFaucetNode, 'pdomCreateAriaValueText', value => {
             return strings.faucetAriaValueText( flowRateToEnum( value ) );
           } );
@@ -222,13 +239,14 @@ export default () => {
           context.propertySet( soluteComboBox.a11yNamePropertyMap.get( solute ), strings.soluteName( solute.tandemName ) );
         }
 
-        // pdomOrder
+        // pdomOrder - Can use vaiables here to shorten code
         context.nodeSet( macroScreenView.pdomPlayAreaNode, 'pdomOrder', [
           beakerNode,
+          context.get( 'phScaleBasics.macroScreen.view.pHMeterNode' ),
+          controlsHeading,
           context.get( 'phScaleBasics.macroScreen.view.soluteComboBox' ),
           context.get( 'phScaleBasics.macroScreen.view.soluteListParent' ),
           context.get( 'phScaleBasics.macroScreen.view.dropperNode.button' ),
-          context.get( 'phScaleBasics.macroScreen.view.pHMeterNode' ),
           context.get( 'phScaleBasics.macroScreen.view.waterFaucetNode' ),
           context.get( 'phScaleBasics.macroScreen.view.drainFaucetNode' ),
           context.get( 'phScaleBasics.macroScreen.view.resetAllButton' )
