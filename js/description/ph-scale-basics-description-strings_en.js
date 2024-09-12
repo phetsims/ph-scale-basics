@@ -44,6 +44,15 @@ export default () => {
     screenSummaryP3() {
       return 'Add solution to beaker and play.';
     },
+    beakerHeading() {
+      return 'The Beaker';
+    },
+    pHMeterHeading() {
+      return 'pH Meter and Read Out';
+    },
+    controlsHeading() {
+      return 'Beaker and pH Meter Controls';
+    },
     dynamicScreenSummary(
       solute,
       totalVolumeEnum,
@@ -64,6 +73,7 @@ export default () => {
     waterFaucetAccessibleName() { return 'Water Faucet'; },
     waterFaucetHelpText() {return 'Add water to solution in beaker.'; },
     drainFaucetAccessibleName() { return 'Drain'; },
+    drainFaucetHelpText() {return 'Open to drain solution from beaker.'; },
     faucetAriaValueText(
       flowRateEnum
     ) {
