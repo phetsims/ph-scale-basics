@@ -125,13 +125,12 @@ export default () => {
           context.nodeSet( beakerNode, 'labelContent', strings.beakerHeading() );
         }
 
-        // pH Meter
-        const pHMeterNode = context.get( 'phScaleBasics.macroScreen.view.pHMeterNode' );
-        {
-          context.nodeSet( pHMeterNode, 'tagName', 'div' );
-          context.nodeSet( pHMeterNode, 'labelTagName', 'h3' );
-          context.nodeSet( pHMeterNode, 'labelContent', strings.pHMeterHeading() );
-        }
+         //pH Meter Heading
+        const phMeterHeading = context.createNode( {
+          tagName: 'h3',
+          innerContent: strings.phMeterHeading()
+        } );
+        macroScreenView.addChild( phMeterHeading );
 
         // pH Meter Probe
         const phMeterProbeNode = context.get( 'phScaleBasics.macroScreen.view.pHMeterNode.probeNode' );
@@ -194,10 +193,11 @@ export default () => {
         // Play Area
         context.nodeSet( macroScreenView.pdomPlayAreaNode, 'pdomOrder', [
           beakerNode,
-          pHMeterNode,
+          phMeterHeading,
           controlsHeading,
           soluteComboBox,
           dropperNodeButton,
+          phMeterProbeNode,
           waterFaucetNode,
           drainFaucetNode
         ] );
