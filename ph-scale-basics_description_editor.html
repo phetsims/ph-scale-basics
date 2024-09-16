@@ -338,7 +338,11 @@
     reloadStrings();
   }
 
-  // codeMirror TextMarker
+  // An object like: {
+  //   marker:  codeMirror TextMarker,
+  //   line:  line number of the error,
+  //   message:  error message
+  // }
   const logicTextMarkProperty = { value: null };
   const stringsTextMarkProperty = { value: null };
 
@@ -346,12 +350,11 @@
     const textMarkProperty = isLogic ? logicTextMarkProperty : stringsTextMarkProperty;
 
     if ( textMarkProperty.value ) {
-      textMarkProperty.value.clear();
+      textMarkProperty.value.marker.clear();
       textMarkProperty.value = null;
     }
 
     const errorContainer = document.querySelector( '#error-container' );
-    errorContainer.style.display = 'none';
 
     // eslint-disable-next-line no-undef
     const error = await iframe.contentWindow.phet.joist.DescriptionContext.externalLoad( code );
@@ -379,17 +382,42 @@
       errorContainer.style.display = 'block';
       errorContainer.innerHTML = `${isLogic ? 'Logic' : 'Strings'} error, line: ${line}<br>${message}`;
 
-      textMarkProperty.value = editor.markText( {
-        line: line - 1,
-        ch: column - 1
-      }, {
+      textMarkProperty.value = {
+
+        // codeMirror text marker, need to save a reference to clear it
+        marker: editor.markText( {
+          line: line - 1,
+          ch: column - 1
+        }, {
+          line: line,
+          ch: 0
+        }, {
+          className: 'syntax-error',
+          title: message
+        } ),
+
+        // Line and message to display in the error container
         line: line,
-        ch: 0
-      }, {
-        className: 'syntax-error',
-        title: message
-      } );
+        message: message
+      };
     }
+
+    // Display an error message for either error - don't hide just because one is successful
+    if ( logicTextMarkProperty.value || stringsTextMarkProperty.value ) {
+      errorContainer.style.display = 'block';
+      if ( logicTextMarkProperty.value ) {
+        const mark = logicTextMarkProperty.value;
+        errorContainer.innerHTML = 'Logic error, line: ' + mark.line + '<br>' + mark.message;
+      }
+      else {
+        const mark = stringsTextMarkProperty.value;
+        errorContainer.innerHTML = 'Strings error, line: ' + mark.line + '<br>' + mark.message;
+      }
+    }
+    else {
+      errorContainer.style.display = 'none';
+    }
+
   };
 
   logicEditor.on( 'change', async editor => {
