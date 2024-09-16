@@ -71,7 +71,7 @@ export default () => {
     beakerHeading() {
       return 'The Beaker';
     },
-    pHMeterHeading() {
+    phMeterHeading() {
       return 'pH Meter and Read Out';
     },
     phMeterProbeAccessibleName() { return 'pH Probe'; },
