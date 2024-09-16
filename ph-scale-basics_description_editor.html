@@ -37,12 +37,16 @@
     }
 
     .load-details {
-      color: #FF4500;
+    }
+
+    .load-details-description {
+      border: 1px solid red;
+      background-color: rgba(255, 0, 0, 0.3);
     }
 
     .syntax-error {
       border: 1px solid red;
-      background-color: rgba(255,0,0,0.3);
+      background-color: rgba(255, 0, 0, 0.3);
     }
 
     /* This class was found online as a way to preserve an iframe aspect ratio,
@@ -219,7 +223,8 @@
     <div id="error-container"></div>
     <details class='load-details'>
       <summary>Load Logic and English Strings</summary>
-      <p><b>Warning:</b> Loading logic or English strings will overwrite any changes you have made.</p>
+      <p class="load-details-description"><b>Warning:</b> Loading logic or English strings will overwrite any changes
+        you have made.</p>
       <div id="load-buttons">
         <button id="load-logic">Load Logic</button>
         <button id="load-english-strings">Load English Strings</button>
