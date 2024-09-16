@@ -36,6 +36,10 @@
       -webkit-padding-start: 1.1em
     }
 
+    .load-details {
+      color: #FF4500;
+    }
+
     .syntax-error {
       border: 1px solid red;
       background-color: rgba(255,0,0,0.3);
@@ -213,10 +217,14 @@
       <iframe id="iframe" allowfullscreen scrolling="no" title="Interact with pH Scale"></iframe>
     </div>
     <div id="error-container"></div>
-    <div id="load-buttons">
-      <button id="load-logic">Load Logic</button>
-      <button id="load-english-strings">Load English Strings</button>
-    </div>
+    <details class='load-details'>
+      <summary>Load Logic and English Strings</summary>
+      <p><b>Warning:</b> Loading logic or English strings will overwrite any changes you have made.</p>
+      <div id="load-buttons">
+        <button id="load-logic">Load Logic</button>
+        <button id="load-english-strings">Load English Strings</button>
+      </div>
+    </details>
     <div id="alerts">
       <div class="activity-log-heading-container">
         <h3 class="activity-log-heading-item">Activity log of Responsive Descriptions</h3>
