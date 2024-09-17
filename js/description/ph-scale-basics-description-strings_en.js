@@ -31,6 +31,19 @@ export default () => {
     partiallyFilled: 'partially filled',
     full: 'full'
   };
+  
+  const phValueMap = {
+    none: 'probe is not in beaker',
+    extremelyAcidic: 'extremely acidic',
+    highlyAcidic: 'highly acidic',
+    moderatelyAcidic: 'moderately acidic',
+    slightlyAcidic: 'slightly acidic',
+    neutral: 'neutral',
+    slightlyBasic: 'slightly basic',
+    moderatelyBasic: 'moderately basic',
+    highlyBasic: 'highly basic',
+    extremelyBasic: 'extremely basic'
+  };
 
   const flowRateMap = {
     off: 'off',
@@ -58,10 +71,11 @@ export default () => {
       solute,
       totalVolumeEnum,
       solutionPH,
+      solutionPHEnum,
       totalVolume
     ) {
       //Currently, {{spit}} solution has a pH of {{7.02}} and is {{almost neutral}}. Solution is {{clear}} with {{lots of}} added water. Beaker is {{close to full}} at {{1.00}} liters.
-      return `Currently, ${soluteMap[ solute ]} solution has a pH of ${solutionPH}. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${totalVolume} liters.`;
+      return `Currently, ${soluteMap[ solute ]} solution has a pH of ${solutionPH} and is ${phValueMap[ solutionPHEnum ]}. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${totalVolume} liters.`;
     },
 
     /*********************************************
@@ -75,6 +89,7 @@ export default () => {
       return 'pH Meter and Read Out';
     },
     phMeterProbeAccessibleName() { return 'pH Probe'; },
+   phMeterProbeHelpText() { return 'Look for pH probe to play. Once grabbed, use keyboard shortcuts to move probe. Space to release.'; },
     controlsHeading() {
       return 'Beaker and pH Meter Controls';
     },
@@ -84,6 +99,7 @@ export default () => {
     soluteName( solute ) {
       return soluteMap[ solute ];
     },
+    soluteComboBoxHelpText() { return 'Choose an everyday liquid for the dropper.'; },
     dropperAccessibleName() { return 'Dropper'; },
     waterFaucetAccessibleName() { return 'Water Faucet'; },
     waterFaucetHelpText() { return 'Add water to solution in beaker.'; },

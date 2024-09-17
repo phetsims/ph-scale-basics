@@ -32,6 +32,7 @@ export default () => {
    * Enumeration Mappings (value => enumeration value)
    *********************************************/
 
+  // Qualitative Volume Ranges
   const totalVolumeToEnum = totalVolume => {
     if ( totalVolume === 0 ) {
       return 'empty';
@@ -41,6 +42,39 @@ export default () => {
     }
     else {
       return 'full';
+    }
+  };
+  // pH Qualitative Ranges
+    const phValueToEnum = phValue => {
+   if(phValue === null) {
+     return 'none';
+   }
+    else if ( phValue <= 1 ) {
+      return 'extremelyAcidic';
+    }
+    else if ( phValue <= 3 ) {
+      return 'highlyAcidic';
+    }
+    else if ( phValue <= 5 ) {
+      return 'moderatelyAcidic';
+    } 
+    else if ( phValue < 7 ) {
+      return 'slightlyAcidic';
+    }
+    else if ( phValue === 7 ) {
+      return 'neutral';
+    }
+    else if ( phValue < 9 ) {
+      return 'slightlyBasic';
+    }
+    else if ( phValue < 11 ) {
+      return 'moderatelyBasic';
+    }
+    else if ( phValue < 13 ) {
+      return 'highlyBasic';
+    }
+    else {
+      return 'extremelyBasic';
     }
   };
 
@@ -109,6 +143,7 @@ export default () => {
             solute.tandemName,
             totalVolumeToEnum( solutionTotalVolume ),
             solutionPHProperty.value,
+            phValueToEnum( solutionPHProperty.value ),
             solutionTotalVolumeProperty.value //needs rounding
           );
         } );
@@ -134,6 +169,7 @@ export default () => {
 
         // pH Meter Probe
         const phMeterProbeNode = context.get( 'phScaleBasics.macroScreen.view.pHMeterNode.probeNode' );
+        context.nodeSet( phMeterProbeNode, 'helpText', strings.phMeterProbeHelpText() );
         {
           context.nodeSet( phMeterProbeNode, 'accessibleName', strings.phMeterProbeAccessibleName() );
         }
@@ -147,6 +183,7 @@ export default () => {
 
         // Solute ComboBox
         const soluteComboBox = context.get( 'phScaleBasics.macroScreen.view.soluteComboBox' );
+        context.nodeSet( soluteComboBox, 'helpText', strings.soluteComboBoxHelpText() );
         context.nodeSet( soluteComboBox, 'accessibleName', strings.soluteComboBoxAccessibleName() );
         for ( const solute of solutes ) {
           context.propertySet( soluteComboBox.a11yNamePropertyMap.get( solute ), strings.soluteName( solute.tandemName ) );
