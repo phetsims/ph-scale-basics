@@ -59,7 +59,7 @@ export default () => {
      *********************************************/
 
     screenSummaryP1() {
-      return 'The Play Area contains a beaker, a solution dropper, water faucet, and a movable pH probe. Water faucet and solution dropper sit above the beaker. The dropper dispenses a number of everyday liquids one at a time.';
+      return 'The Play Area contains a drainable beaker, a solution dropper, water faucet, and a movable pH probe. Water faucet and solution dropper sit above the beaker. The dropper dispenses a number of everyday liquids one at a time.';
     },
     screenSummaryP2() {
       return 'The Control Area has a button to reset the sim.';
