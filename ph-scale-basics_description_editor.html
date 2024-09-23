@@ -324,10 +324,14 @@
   const missingLogic = !localStorage.getItem( 'ph-scale-basics-description-logic.js' );
   const missingStrings = !localStorage.getItem( 'ph-scale-basics-description-strings_en.js' );
 
+  // Returns the default logic for the logic editor. Tries to pull the last content
+  // from local storage, otherwise returns a placeholder string.
   const getDefaultLogic = () => {
     return localStorage.getItem( 'ph-scale-basics-description-logic.js' ) || '// Copy-paste logic here, it will be saved';
   };
 
+  // Returns the 'default' strings for the strings editor. Tries to pull the last content
+  // from local storage, otherwise returns a placeholder string.
   const getDefaultStrings = () => {
 
     // TODO: generalize to locale-specific based on what locale the sim is https://github.com/phetsims/joist/issues/941
