@@ -326,13 +326,13 @@
 
   const getDefaultLogic = () => {
     return localStorage.getItem( 'ph-scale-basics-description-logic.js' ) || '// Copy-paste logic here, it will be saved';
-  }
+  };
 
   const getDefaultStrings = () => {
 
     // TODO: generalize to locale-specific based on what locale the sim is https://github.com/phetsims/joist/issues/941
     return localStorage.getItem( 'ph-scale-basics-description-strings_en.js' ) || '// Copy-paste strings here, they will be saved';
-  }
+  };
 
   // eslint-disable-next-line no-undef
   const logicEditor = CodeMirror( document.querySelector( '#logic-editor' ), {
