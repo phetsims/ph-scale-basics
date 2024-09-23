@@ -71,11 +71,33 @@ export default () => {
       solute,
       totalVolumeEnum,
       solutionPH,
+      meterPH,
       solutionPHEnum,
-      totalVolume
-    ) {
-      //Currently, {{spit}} solution has a pH of {{7.02}} and is {{almost neutral}}. Solution is {{clear}} with {{lots of}} added water. Beaker is {{close to full}} at {{1.00}} liters.
-      return `Currently, ${soluteMap[ solute ]} solution has a pH of ${solutionPH} and is ${phValueMap[ solutionPHEnum ]}. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${totalVolume} liters.`;
+      solutionTotalVolume
+    ) { // Question: Whaer should case logic go? Here or in logic.
+      if ( totalVolumeEnum === 'empty' ) {
+        // Empty case
+        return `ACurrently, beaker is ${totalVolumeMap[ totalVolumeEnum ]}.`;
+      }
+      else if ( solute === 'water' ) {
+       if ( meterPH === null ) {
+              return `BCurrently, beaker contains ${solutionTotalVolume} liters of ${soluteMap[ solute ]} and is ${totalVolumeMap[ totalVolumeEnum ]}.`;
+          }
+        else {
+            return `CCurrently, beaker contains ${solutionTotalVolume} liters of ${soluteMap[ solute ]} and is ${totalVolumeMap[ totalVolumeEnum ]}. ${soluteMap[ solute ]} has a pH of ${solutionPH} and is ${phValueMap[ solutionPHEnum ]}.`;
+          }
+
+      }
+      else if ( meterPH === null ) {
+        // ToDo: need color Map and dilutionMap parameters.
+        // Currently, {{spit}} solution is {{clear}} with {{lots of}} added water. Beaker is {{close to full}} at {{1.00}} liters.
+        return `DCurrently, ${soluteMap[ solute ]} solution. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${solutionTotalVolume} liters.`;
+
+      }
+      else {
+        // Not empty case: Currently, {{spit}} solution has a pH of {{7.02}} and is {{almost neutral}}. Solution is {{clear}} with {{lots of}} added water. Beaker is {{close to full}} at {{1.00}} liters.
+        return `ECurrently, ${soluteMap[ solute ]} solution has a pH of ${solutionPH} and is ${phValueMap[ solutionPHEnum ]}. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${solutionTotalVolume} liters.`;
+      }
     },
 
     /*********************************************

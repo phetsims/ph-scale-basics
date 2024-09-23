@@ -131,6 +131,7 @@ export default () => {
         const solutionTotalVolumeProperty = context.get( 'phScaleBasics.macroScreen.model.solution.totalVolumeProperty' );
         context.multilink( [
           // TODO: context.get doesn't work for "This element is defined in" cases, e.g. model.solution.soluteProperty won't work
+          // TODO: add all properties that can change and need to be watched.
           context.get( 'phScaleBasics.macroScreen.model.dropper.soluteProperty' ),
           solutionTotalVolumeProperty
         ], (
@@ -138,12 +139,14 @@ export default () => {
           solutionTotalVolume
         ) => {
           const solutionPHProperty = context.get( 'phScaleBasics.macroScreen.model.solution.pHProperty' );
-          //
+          const meterPHProperty = context.get( 'phScaleBasics.macroScreen.model.pHMeter.pHProperty' );
+          // console.log( `STV:` + solutionTotalVolume, `STVP:` + solutionTotalVolumeProperty)
           dynamicScreenSummaryNode.innerContent = strings.dynamicScreenSummary(
             solute.tandemName,
             totalVolumeToEnum( solutionTotalVolume ),
             solutionPHProperty.value,
-            phValueToEnum( solutionPHProperty.value ),
+            meterPHProperty.value,
+            phValueToEnum( solutionPHProperty.value ), 
             solutionTotalVolumeProperty.value //needs rounding
           );
         } );
