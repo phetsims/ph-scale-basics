@@ -314,7 +314,9 @@
         reject( err );
       } );
 
-      request.open( 'GET', `./js/description/${file}`, true );
+      // Add a random timestamp to the request to prevent caching
+      const timestamp = new Date().getTime();
+      request.open( 'GET', `./js/description/${file}?v=${timestamp}`, true );
       request.send();
     } );
   };
