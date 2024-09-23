@@ -200,6 +200,24 @@
     #state-pane {
       width: calc(100% * 0.25);
     }
+
+    .larger-button {
+      font-size: 1.17em;
+    }
+
+    .editor-collapsed #editor-pane {
+      width: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .editor-collapsed #main-pane {
+      width: calc(100% * 0.5);
+    }
+
+    .editor-collapsed #state-pane {
+      width: calc(100% * 0.5);
+    }
   </style>
 
   <link rel="stylesheet" href="../sherpa/lib/codemirror-5.52.2.min.css">
@@ -211,7 +229,7 @@
 </head>
 <body>
 
-<div id="columns">
+<div id="columns" class="editor-collapsed">
   <div id="editor-pane">
     <div id="logic-editor"></div>
     <div id="strings-editor"></div>
@@ -226,10 +244,14 @@
       <p class="load-details-description"><b>Warning:</b> Loading logic or English strings will overwrite any changes
         you have made.</p>
       <div id="load-buttons">
-        <button id="load-logic">Load Logic</button>
-        <button id="load-english-strings">Load English Strings</button>
+        <button class="larger-button" id="load-logic">Load Logic</button>
+        <button class="larger-button" id="load-english-strings">Load English Strings</button>
       </div>
     </details>
+    <div>
+      <hr></hr>
+      <button class="larger-button" id="editor-toggle-button">Toggle Editor</button>
+    </div>
     <div id="alerts">
       <div class="activity-log-heading-container">
         <h3 class="activity-log-heading-item">Activity log of Responsive Descriptions</h3>
@@ -300,11 +322,21 @@
   const missingLogic = !localStorage.getItem( 'ph-scale-basics-description-logic.js' );
   const missingStrings = !localStorage.getItem( 'ph-scale-basics-description-strings_en.js' );
 
+  const getDefaultLogic = () => {
+    return localStorage.getItem( 'ph-scale-basics-description-logic.js' ) || '// Copy-paste logic here, it will be saved';
+  }
+
+  const getDefaultStrings = () => {
+
+    // TODO: generalize to locale-specific based on what locale the sim is https://github.com/phetsims/joist/issues/941
+    return localStorage.getItem( 'ph-scale-basics-description-strings_en.js' ) || '// Copy-paste strings here, they will be saved';
+  }
+
   // eslint-disable-next-line no-undef
   const logicEditor = CodeMirror( document.querySelector( '#logic-editor' ), {
     lineNumbers: true,
     tabSize: 2,
-    value: localStorage.getItem( 'ph-scale-basics-description-logic.js' ) || '// Copy-paste logic here, it will be saved',
+    value: getDefaultLogic(),
     mode: 'javascript',
     theme: 'monokai',
     lineWrapping: true
@@ -314,12 +346,16 @@
   const stringsEditor = CodeMirror( document.querySelector( '#strings-editor' ), {
     lineNumbers: true,
     tabSize: 2,
-    // TODO: generalize to locale-specific based on what locale the sim is https://github.com/phetsims/joist/issues/941
-    value: localStorage.getItem( 'ph-scale-basics-description-strings_en.js' ) || '// Copy-paste logic here, it will be saved',
+    value: getDefaultStrings(),
     mode: 'javascript',
     theme: 'monokai',
     lineWrapping: true
   } );
+
+  const reloadEditorDefaults = () => {
+    logicEditor.setValue( getDefaultLogic() );
+    stringsEditor.setValue( getDefaultStrings() );
+  };
 
   const reloadLogic = async () => {
     const logic = await loadFileAsync( 'ph-scale-basics-description-logic.js' );
@@ -423,6 +459,18 @@
 
       await runCode( stringsEditor.getValue(), false );
       await runCode( logicEditor.getValue(), true );
+    }
+  } );
+
+  // Toggle the editor
+  document.getElementById( 'editor-toggle-button' ).addEventListener( 'click', () => {
+    const columns = document.getElementById( 'columns' );
+    columns.classList.toggle( 'editor-collapsed' );
+
+    // Reload the logic editors to whatever is saved because the editor values cannot
+    // be set while the editor is collapsed
+    if ( !columns.className.includes( 'editor-collapsed' ) ) {
+      reloadEditorDefaults();
     }
   } );
 </script>
