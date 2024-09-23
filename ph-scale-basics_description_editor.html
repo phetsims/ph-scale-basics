@@ -265,10 +265,13 @@
 
   const noPostMessage = simulationQueryString.indexOf( 'postMessageOnLoad&postMessageOnError' ) === -1;
   const noAccessibility = simulationQueryString.indexOf( 'supportsInteractiveDescription' ) === -1;
+  const noDescriptionPlugin = simulationQueryString.indexOf( 'supportsDescriptionPlugin' ) === -1;
+  const noBrand = simulationQueryString.indexOf( 'brand' ) === -1;
 
   noPostMessage && ( simulationQueryString += 'postMessageOnLoad&postMessageOnError&' );
-  noAccessibility && ( simulationQueryString += 'supportsInteractiveDescription=true' );
-
+  noAccessibility && ( simulationQueryString += 'supportsInteractiveDescription=true&' );
+  noDescriptionPlugin && ( simulationQueryString += 'supportsDescriptionPlugin=true&' );
+  noBrand && ( simulationQueryString += 'brand=phet&' );
 
   // in unbuilt mode and on phet-server, the brand suffix is removed
   const filenameEnding = ( window.location.hostname === 'phet.colorado.edu' || !IS_BUILT ) ? '.html' : '_phet.html';
