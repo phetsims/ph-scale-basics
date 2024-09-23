@@ -6,18 +6,18 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import DescriptionContext from '../../joist/js/DescriptionContext.js';
 import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
 import PHScaleConstants from '../../ph-scale/js/common/PHScaleConstants.js';
 import PHScaleQueryParameters from '../../ph-scale/js/common/PHScaleQueryParameters.js';
 import MacroScreen from '../../ph-scale/js/macro/MacroScreen.js';
-import Tandem from '../../tandem/js/Tandem.js';
-import PhScaleBasicsStrings from './PhScaleBasicsStrings.js';
-import DescriptionContext from '../../joist/js/DescriptionContext.js';
 import Alerter from '../../scenery-phet/js/accessibility/describers/Alerter.js';
+import Tandem from '../../tandem/js/Tandem.js';
+import PHScaleBasicsDescriptionLogic from './description/ph-scale-basics-description-logic.js'; // eslint-disable-line default-import-match-filename
 import PHScaleBasicsDescriptionStrings_en from './description/ph-scale-basics-description-strings_en.js'; // eslint-disable-line default-import-match-filename
 import PHScaleBasicsDescriptionStrings_es from './description/ph-scale-basics-description-strings_es.js'; // eslint-disable-line default-import-match-filename
-import PHScaleBasicsDescriptionLogic from './description/ph-scale-basics-description-logic.js'; // eslint-disable-line default-import-match-filename
+import PhScaleBasicsStrings from './PhScaleBasicsStrings.js';
 
 // If autofill query parameter was not in the URL, change the default.
 if ( !QueryStringMachine.containsKey( 'autofill' ) ) {
