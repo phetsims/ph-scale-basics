@@ -32,13 +32,25 @@ export default () => {
    * Enumeration Mappings (value => enumeration value)
    *********************************************/
 
-  // Qualitative Volume Ranges
+  // Qualitative Total Volume Ranges
   const totalVolumeToEnum = totalVolume => {
     if ( totalVolume === 0 ) {
       return 'empty';
     }
-    else if ( totalVolume < 1.2 ) {
-      return 'partiallyFilled';
+    else if ( totalVolume < 0.3 ) {
+      return 'nearlyEmpty';
+    }
+    else if ( totalVolume < 0.595 ) {
+      return 'underHalfFull';
+    }
+    else if ( totalVolume < 0.605 ) {
+      return 'halfFull';
+    }
+    else if ( totalVolume < 0.9 ) {
+      return 'overHalfFull';
+    }
+    else if ( totalVolume < 1.195 ) {
+      return 'nearlyFull';
     }
     else {
       return 'full';

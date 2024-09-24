@@ -26,12 +26,34 @@ export default () => {
     water: 'water'
   };
 
+// Soute/Solution Colors
+  const soluteColorMap = {
+    batteryAcidBrightYellow: 'bright yellow', 
+    bloodRed: 'red',
+    chickenSoupDarkYellow: 'dark yellow',
+    coffeeBrown: 'brown',
+    drainCleanerBrightYellow: 'bright yellow',
+    handSoapLavender: 'lavender',
+    milkWhite: 'white',
+    orangeJuiceOrange: 'orange',
+    sodaLimeGreen: 'lime green',
+    spitClear: 'clear',
+    vomitSalmon: 'salmon',
+    waterClear: 'clear'
+  };
+
+// Beaker Volume
   const totalVolumeMap = {
     empty: 'empty',
-    partiallyFilled: 'partially filled',
+    nearlyEmpty: 'nearly empty',
+    underHalfFull: 'under half full',
+    halfFull: 'half full',
+    overHalfFull: 'over half full',
+    nearlyFull: 'nearly full',
     full: 'full'
   };
   
+// Solutions/Solutes
   const phValueMap = {
     none: 'probe is not in beaker',
     extremelyAcidic: 'extremely acidic',
@@ -44,6 +66,8 @@ export default () => {
     highlyBasic: 'highly basic',
     extremelyBasic: 'extremely basic'
   };
+
+
 
   const flowRateMap = {
     off: 'off',
