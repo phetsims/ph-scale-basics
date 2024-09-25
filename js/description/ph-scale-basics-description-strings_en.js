@@ -28,18 +28,16 @@ export default () => {
 
 // Soute/Solution Colors
   const soluteColorMap = {
-    batteryAcidBrightYellow: 'bright yellow', 
-    bloodRed: 'red',
-    chickenSoupDarkYellow: 'dark yellow',
-    coffeeBrown: 'brown',
-    drainCleanerBrightYellow: 'bright yellow',
-    handSoapLavender: 'lavender',
-    milkWhite: 'white',
-    orangeJuiceOrange: 'orange',
-    sodaLimeGreen: 'lime green',
-    spitClear: 'clear',
-    vomitSalmon: 'salmon',
-    waterClear: 'clear'
+    brightYellow: 'bright yellow', 
+    red: 'red',
+    darkYellow: 'dark yellow',
+    brown: 'brown',
+    lavender: 'lavender',
+    white: 'white',
+    orange: 'orange',
+    limeGreen: 'lime green',
+    colorless: 'colorless',
+    salmon: 'salmon'
   };
 
 // Beaker Volume
@@ -51,6 +49,18 @@ export default () => {
     overHalfFull: 'over half full',
     nearlyFull: 'nearly full',
     full: 'full'
+  };
+
+  // Added Water Volume
+  const addedWaterVolumeMap = {
+    no: 'no',
+    aTinyBitOf: 'a tiny bit of',
+    aLittle: 'a little',
+    some: 'some',
+    equalAmountsOf: 'equal amounts of',
+    aFairAmountOf: 'a fair amount of',
+    lotsOf: 'lots of',
+    mostly: 'mostly'
   };
   
 // Solutions/Solutes
@@ -66,8 +76,6 @@ export default () => {
     highlyBasic: 'highly basic',
     extremelyBasic: 'extremely basic'
   };
-
-
 
   const flowRateMap = {
     off: 'off',
@@ -97,8 +105,10 @@ export default () => {
       solutionPH,
       meterPH,
       solutionPHEnum,
-      solutionTotalVolume
-    ) { // Question: Whaer should case logic go? Here or in logic.
+      solutionTotalVolume,
+      soluteColorEnum,
+      addedWaterVolumeEnum
+    ) { // Question: Where should case logic go? Here or in logic.
       if ( totalVolumeEnum === 'empty' ) {
         // Empty case
         return `ACurrently, beaker is ${totalVolumeMap[ totalVolumeEnum ]}.`;

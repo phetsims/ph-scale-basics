@@ -90,6 +90,69 @@ export default () => {
     }
   };
 
+  // Added Water Volume
+  const addedWaterVolumeToEnum = (addedWaterVolume, solutionTotalVolume) => {
+    const percentAddedWater = ( addedWaterVolume/solutionTotalVolume );
+    if ( percentAddedWater === 0 ) {
+      return 'no';
+    }
+    else if ( percentAddedWater <= 0.1 ) {
+      return 'aTinyBitOf';
+    }
+    else if ( percentAddedWater <=  0.25 ) {
+      return 'aLittle';
+    }
+    else if ( percentAddedWater < 0.495 ) {
+      return 'some';
+    }
+    else if ( percentAddedWater < 0.505  ) {
+      return 'equalAmountsOf';
+    }
+    else if ( percentAddedWater < 0.75 ) {
+      return 'aFairAmountOf';
+    }
+    else if ( percentAddedWater < 0.90  ) {
+      return 'lotsOf';
+    }
+    else {
+      return 'mostly';
+    }
+  };
+
+  // Solute / Solution Colors without added water 
+  const soluteToColorEnum = ( solute ) => {
+    if ( solute === 'BATTERY_ACID' || solute === 'DRAIN_CLEANER' ) {
+      return 'brightYellow';
+    }
+    else if ( solute === 'BLOOD' ) {
+      return 'red';
+    }
+    else if ( solute === 'CHICKEN_SOUP') {
+      return 'darkYellow';
+    }
+    else if ( solute === 'COFFEE') {
+      return 'brown';
+    }
+    else if ( solute === 'HAND_SOAP') {
+      return 'lavender';
+    }
+    else if ( solute === 'MILK') {
+      return 'white';
+    }
+    else if ( solute === 'ORANGE_JUICE') {
+      return 'orange';
+    }
+    else if ( solute === 'SODA') {
+      return 'limeGreen';
+    }
+    else if ( solute === 'VOMIT') {
+      return 'salmon';
+    }
+    else {
+      return 'colorless';
+    }
+  };
+
   const flowRateToEnum = flowRate => {
     if ( flowRate === 0 ) {
       return 'off';
@@ -140,26 +203,38 @@ export default () => {
         } ) );
 
         // Dynamic content
+        const addedWaterVolumeProperty = context.get( 'phScaleBasics.macroScreen.model.solution.waterVolumeProperty' );
         const solutionTotalVolumeProperty = context.get( 'phScaleBasics.macroScreen.model.solution.totalVolumeProperty' );
+        const soluteProperty = context.get( 'phScaleBasics.macroScreen.model.dropper.soluteProperty' );
+        const solutionPHProperty = context.get( 'phScaleBasics.macroScreen.model.solution.pHProperty' );
+        const meterPHProperty = context.get( 'phScaleBasics.macroScreen.model.pHMeter.pHProperty' );
         context.multilink( [
           // TODO: context.get doesn't work for "This element is defined in" cases, e.g. model.solution.soluteProperty won't work
           // TODO: add all properties that can change and need to be watched.
-          context.get( 'phScaleBasics.macroScreen.model.dropper.soluteProperty' ),
-          solutionTotalVolumeProperty
+          soluteProperty,
+          solutionTotalVolumeProperty,
+          addedWaterVolumeProperty,
+          solutionPHProperty,
+          meterPHProperty,
+
         ], (
           solute,
-          solutionTotalVolume
+          solutionTotalVolume,
+          addedWaterVolume,
+          solutionPH,
+          meterPH
         ) => {
-          const solutionPHProperty = context.get( 'phScaleBasics.macroScreen.model.solution.pHProperty' );
-          const meterPHProperty = context.get( 'phScaleBasics.macroScreen.model.pHMeter.pHProperty' );
+          
           // console.log( `STV:` + solutionTotalVolume, `STVP:` + solutionTotalVolumeProperty)
           dynamicScreenSummaryNode.innerContent = strings.dynamicScreenSummary(
             solute.tandemName,
             totalVolumeToEnum( solutionTotalVolume ),
-            solutionPHProperty.value,
-            meterPHProperty.value,
-            phValueToEnum( solutionPHProperty.value ), 
-            solutionTotalVolumeProperty.value //needs rounding
+            solutionPH,
+            meterPH,
+            phValueToEnum( solutionPH ), 
+            solutionTotalVolume, 
+            soluteToColorEnum( solute.tandemName ),
+            addedWaterVolumeToEnum( addedWaterVolume, solutionTotalVolume )
           );
         } );
 
