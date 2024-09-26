@@ -14,9 +14,9 @@ import PHScaleQueryParameters from '../../ph-scale/js/common/PHScaleQueryParamet
 import MacroScreen from '../../ph-scale/js/macro/MacroScreen.js';
 import Alerter from '../../scenery-phet/js/accessibility/describers/Alerter.js';
 import Tandem from '../../tandem/js/Tandem.js';
-import PHScaleBasicsDescriptionLogic from './description/ph-scale-basics-description-logic.js'; // eslint-disable-line default-import-match-filename
-import PHScaleBasicsDescriptionStrings_en from './description/ph-scale-basics-description-strings_en.js'; // eslint-disable-line default-import-match-filename
-import PHScaleBasicsDescriptionStrings_es from './description/ph-scale-basics-description-strings_es.js'; // eslint-disable-line default-import-match-filename
+import PHScaleBasicsDescriptionLogic from './description/ph-scale-basics-description-logic.js'; // eslint-disable-line phet/default-import-match-filename
+import PHScaleBasicsDescriptionStrings_en from './description/ph-scale-basics-description-strings_en.js'; // eslint-disable-line phet/default-import-match-filename
+import PHScaleBasicsDescriptionStrings_es from './description/ph-scale-basics-description-strings_es.js'; // eslint-disable-line phet/default-import-match-filename
 import PhScaleBasicsStrings from './PhScaleBasicsStrings.js';
 
 // If autofill query parameter was not in the URL, change the default.
