@@ -26,6 +26,7 @@ if ( !QueryStringMachine.containsKey( 'autofill' ) ) {
 
 simLauncher.launch( () => {
 
+  //TODO https://github.com/phetsims/ph-scale/issues/294
   if ( phet.chipper.queryParameters.supportsDescriptionPlugin ) {
     PHScaleBasicsDescriptionStrings_en();
     PHScaleBasicsDescriptionStrings_es();
@@ -46,6 +47,7 @@ simLauncher.launch( () => {
     phetioDesigned: true
   } );
 
+  //TODO https://github.com/phetsims/ph-scale/issues/294
   phet.chipper.queryParameters.supportsDescriptionPlugin && sim.isConstructionCompleteProperty.lazyLink( isConstructionComplete => {
     DescriptionContext.startupComplete();
   } );
