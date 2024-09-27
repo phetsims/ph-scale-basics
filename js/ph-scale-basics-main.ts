@@ -6,7 +6,6 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import DescriptionContext from '../../joist/js/DescriptionContext.js';
 import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
 import PHScaleConstants from '../../ph-scale/js/common/PHScaleConstants.js';
@@ -18,6 +17,8 @@ import PHScaleBasicsDescriptionLogic from './description/ph-scale-basics-descrip
 import PHScaleBasicsDescriptionStrings_en from './description/ph-scale-basics-description-strings_en.js'; // eslint-disable-line phet/default-import-match-filename
 import PHScaleBasicsDescriptionStrings_es from './description/ph-scale-basics-description-strings_es.js'; // eslint-disable-line phet/default-import-match-filename
 import PhScaleBasicsStrings from './PhScaleBasicsStrings.js';
+import MacroScreenDescriptionLogic from './description/MacroScreenDescriptionLogic.js';
+import DescriptionContext from './description/DescriptionContext.js';
 
 // If autofill query parameter was not in the URL, change the default.
 if ( !QueryStringMachine.containsKey( 'autofill' ) ) {
@@ -38,8 +39,10 @@ simLauncher.launch( () => {
     phet.log && phet.log( PHScaleBasicsDescriptionLogic.toString() );
   }
 
+  const macroScreen = new MacroScreen( Tandem.ROOT.createTandem( 'macroScreen' ) );
+
   const screens = [
-    new MacroScreen( Tandem.ROOT.createTandem( 'macroScreen' ) )
+    macroScreen
   ];
 
   const sim = new Sim( PhScaleBasicsStrings[ 'ph-scale-basics' ].titleStringProperty, screens, {
@@ -47,8 +50,18 @@ simLauncher.launch( () => {
     phetioDesigned: true
   } );
 
-  //TODO https://github.com/phetsims/ph-scale/issues/294
-  phet.chipper.queryParameters.supportsDescriptionPlugin && sim.isConstructionCompleteProperty.lazyLink( isConstructionComplete => {
+  sim.isConstructionCompleteProperty.lazyLink( isConstructionComplete => {
+
+    // Load strings by registering them to the DescriptionContext
+    PHScaleBasicsDescriptionStrings_en();
+    PHScaleBasicsDescriptionStrings_es();
+
+    // Wait until construction is complete to access the model and view
+    const logic = new MacroScreenDescriptionLogic( macroScreen );
+
+    // Register the logic to the context for reloading logic
+    DescriptionContext.registerLogic( logic );
+
     DescriptionContext.startupComplete();
   } );
 

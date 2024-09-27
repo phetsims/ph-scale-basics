@@ -19,7 +19,9 @@ export default [
       '@typescript-eslint/ban-ts-comment': [
         'error',
         {
-          'ts-expect-error': true,
+
+          // TODO: For prototyping, I wanted to use ts-expect-error, see https://github.com/phetsims/joist/issues/941
+          'ts-expect-error': false,
           'ts-ignore': true,
           'ts-check': true,
           'ts-nocheck': true

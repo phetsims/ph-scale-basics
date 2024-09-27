@@ -28,7 +28,7 @@ export default () => {
 
 // Soute/Solution Colors
   const soluteColorMap = {
-    brightYellow: 'bright yellow', 
+    brightYellow: 'bright yellow',
     red: 'red',
     darkYellow: 'dark yellow',
     brown: 'brown',
@@ -62,7 +62,7 @@ export default () => {
     lotsOf: 'lots of',
     mostly: 'mostly'
   };
-  
+
 // Solutions/Solutes
   const phValueMap = {
     none: 'probe is not in beaker',
@@ -83,7 +83,7 @@ export default () => {
     fast: 'fast'
   };
 
-  return phet.joist.DescriptionContext.registerStrings( {
+  return phet.phScaleBasics.DescriptionContext.registerStrings( {
     locale: 'en',
 
     /*********************************************
@@ -114,12 +114,12 @@ export default () => {
         return `ACurrently, beaker is ${totalVolumeMap[ totalVolumeEnum ]}.`;
       }
       else if ( solute === 'water' ) {
-       if ( meterPH === null ) {
-              return `BCurrently, beaker contains ${solutionTotalVolume} liters of ${soluteMap[ solute ]} and is ${totalVolumeMap[ totalVolumeEnum ]}.`;
-          }
+        if ( meterPH === null ) {
+          return `BCurrently, beaker contains ${solutionTotalVolume} liters of ${soluteMap[ solute ]} and is ${totalVolumeMap[ totalVolumeEnum ]}.`;
+        }
         else {
-            return `CCurrently, beaker contains ${solutionTotalVolume} liters of ${soluteMap[ solute ]} and is ${totalVolumeMap[ totalVolumeEnum ]}. ${soluteMap[ solute ]} has a pH of ${solutionPH} and is ${phValueMap[ solutionPHEnum ]}.`;
-          }
+          return `CCurrently, beaker contains ${solutionTotalVolume} liters of ${soluteMap[ solute ]} and is ${totalVolumeMap[ totalVolumeEnum ]}. ${soluteMap[ solute ]} has a pH of ${solutionPH} and is ${phValueMap[ solutionPHEnum ]}.`;
+        }
 
       }
       else if ( meterPH === null ) {
@@ -145,7 +145,7 @@ export default () => {
       return 'pH Meter and Read Out';
     },
     phMeterProbeAccessibleName() { return 'pH Probe'; },
-   phMeterProbeHelpText() { return 'Look for pH probe to play. Once grabbed, use keyboard shortcuts to move probe. Space to release.'; },
+    phMeterProbeHelpText() { return 'Look for pH probe to play. Once grabbed, use keyboard shortcuts to move probe. Space to release.'; },
     controlsHeading() {
       return 'Beaker and pH Meter Controls';
     },

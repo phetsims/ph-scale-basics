@@ -26,7 +26,7 @@ export default () => {
     full: 'lleno'
   };
 
-  return phet.joist.DescriptionContext.registerStrings( {
+  return phet.phScaleBasics.DescriptionContext.registerStrings( {
     locale: 'es',
     screenSummary() {
       return 'Coloque la descripción de la pantalla aquí o divídala en varios párrafos';
@@ -36,6 +36,9 @@ export default () => {
       totalVolume
     ) {
       return `El soluto es ${soluteMap[ solute ]}, y el volumen total es ${totalVolumeMap[ totalVolume ]}.`;
+    },
+    beakerHeading() {
+      return 'La vaso de precipitados';
     },
     soluteComboBoxAccessibleName() {
       return 'Soluto';
