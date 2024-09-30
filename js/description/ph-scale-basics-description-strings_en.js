@@ -28,7 +28,7 @@ export default () => {
 
 // Soute/Solution Colors
   const soluteColorMap = {
-    brightYellow: 'bright yellow', 
+    brightYellow: 'bright yellow',
     red: 'red',
     darkYellow: 'dark yellow',
     brown: 'brown',
@@ -62,7 +62,7 @@ export default () => {
     lotsOf: 'lots of',
     mostly: 'mostly'
   };
-  
+
 // Solutions/Solutes
   const phValueMap = {
     none: 'probe is not in beaker',
@@ -78,9 +78,11 @@ export default () => {
   };
 
   const flowRateMap = {
-    off: 'off',
-    slow: 'slow',
-    fast: 'fast'
+    closed: 'closed',
+    slightlyOpen: 'slightly open',
+    openABit: 'open a bit',
+    openALot: 'open a lot',
+    fullyOpen: 'fully open'
   };
 
   return phet.joist.DescriptionContext.registerStrings( {
@@ -110,27 +112,67 @@ export default () => {
       addedWaterVolumeEnum
     ) { // Question: Where should case logic go? Here or in logic.
       if ( totalVolumeEnum === 'empty' ) {
-        // Empty case
+
+        // There is no water or solute in the beaker.
         return `ACurrently, beaker is ${totalVolumeMap[ totalVolumeEnum ]}.`;
       }
       else if ( solute === 'water' ) {
-       if ( meterPH === null ) {
-              return `BCurrently, beaker contains ${solutionTotalVolume} liters of ${soluteMap[ solute ]} and is ${totalVolumeMap[ totalVolumeEnum ]}.`;
-          }
-        else {
-            return `CCurrently, beaker contains ${solutionTotalVolume} liters of ${soluteMap[ solute ]} and is ${totalVolumeMap[ totalVolumeEnum ]}. ${soluteMap[ solute ]} has a pH of ${solutionPH} and is ${phValueMap[ solutionPHEnum ]}.`;
-          }
 
+        // There is only water in the beaker.
+        if ( meterPH === null ) {
+
+          // The meter is not measuring any value.
+          return `BCurrently, beaker contains ${solutionTotalVolume} liters of ${soluteMap[ solute ]} and is ${totalVolumeMap[ totalVolumeEnum ]}.`;
+        }
+        else {
+
+          // The meater is measuring a value.
+          return `CCurrently, beaker contains ${solutionTotalVolume} liters of ${soluteMap[ solute ]} and is ${totalVolumeMap[ totalVolumeEnum ]}. ${soluteMap[ solute ]} has a pH of ${solutionPH} and is ${phValueMap[ solutionPHEnum ]}.`;
+        }
+      }
+      else if ( addedWaterVolumeEnum === 'equalAmountsOf' ) {
+
+        // There are equal amounts of water and solute in the beaker.
+        if ( meterPH === null ) {
+
+          // The meter is not measuring any value.
+          return `FCurrently, ${soluteMap[ solute ]} solution is ${soluteColorMap[ soluteColorEnum ]} with ${addedWaterVolumeMap[ addedWaterVolumeEnum ]} ${soluteMap[ solute ]} and added water. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${solutionTotalVolume} liters.`;
+        }
+        else {
+
+          // The meter is measuring a value.
+          return `GCurrently, ${soluteMap[ solute ]} solution has a pH of ${solutionPH} and is ${phValueMap[ solutionPHEnum ]}. Solution is ${soluteColorMap[ soluteColorEnum ]} with ${addedWaterVolumeMap[ addedWaterVolumeEnum ]} ${soluteMap[ solute ]} and added water. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${solutionTotalVolume} liters.`;
+        }
       }
       else if ( meterPH === null ) {
-        // ToDo: need color Map and dilutionMap parameters.
-        // Currently, {{spit}} solution is {{clear}} with {{lots of}} added water. Beaker is {{close to full}} at {{1.00}} liters.
-        return `DCurrently, ${soluteMap[ solute ]} solution. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${solutionTotalVolume} liters.`;
 
+        // There is a solute in the beaker and it is not an equal amount of water.
+        if ( addedWaterVolumeEnum === 'no' || soluteColorEnum === 'colorless' ) {
+
+          // There is no water or the solute has no color, describe the color of the solution
+          // In this case, there is some amount of water and solute (other than equal)
+          // ToDo: need color Map and dilutionMap parameters.
+          // Currently, {{spit}} solution is {{clear}} with {{lots of}} added water. Beaker is {{close to full}} at {{1.00}} liters.
+          return `D1Currently, ${soluteMap[ solute ]} solution is ${soluteColorMap[ soluteColorEnum ]} with ${addedWaterVolumeMap[ addedWaterVolumeEnum ]} added water. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${solutionTotalVolume} liters.`;
+        }
+        else {
+
+          // There is water and solute, and the solute has a color - describe that it is of a lighter color.
+          return `D2Currently, ${soluteMap[ solute ]} solution is lighter ${soluteColorMap[ soluteColorEnum ]} with ${addedWaterVolumeMap[ addedWaterVolumeEnum ]} added water. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${solutionTotalVolume} liters.`;
+        }
       }
       else {
-        // Not empty case: Currently, {{spit}} solution has a pH of {{7.02}} and is {{almost neutral}}. Solution is {{clear}} with {{lots of}} added water. Beaker is {{close to full}} at {{1.00}} liters.
-        return `ECurrently, ${soluteMap[ solute ]} solution has a pH of ${solutionPH} and is ${phValueMap[ solutionPHEnum ]}. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${solutionTotalVolume} liters.`;
+
+        if ( addedWaterVolumeEnum === 'no' || soluteColorEnum === 'colorless' ) {
+
+          // There is no water or the solute has no color, describe the color of the solution
+          return `E1Currently, ${soluteMap[ solute ]} solution has a pH of ${solutionPH} and is ${phValueMap[ solutionPHEnum ]}. Solution is ${soluteColorMap[ soluteColorEnum ]} with ${addedWaterVolumeMap[ addedWaterVolumeEnum ]} added water. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${solutionTotalVolume} liters.`;
+        }
+        else {
+
+          // There is water and solute, and the solute has a color - describe that it is of a lighter color.
+          return `E2Currently, ${soluteMap[ solute ]} solution has a pH of ${solutionPH} and is ${phValueMap[ solutionPHEnum ]}. Solution is lighter ${soluteColorMap[ soluteColorEnum ]} with ${addedWaterVolumeMap[ addedWaterVolumeEnum ]} added water. Beaker is ${totalVolumeMap[ totalVolumeEnum ]} at ${solutionTotalVolume} liters.`;
+        }
       }
     },
 
@@ -145,7 +187,7 @@ export default () => {
       return 'pH Meter and Read Out';
     },
     phMeterProbeAccessibleName() { return 'pH Probe'; },
-   phMeterProbeHelpText() { return 'Look for pH probe to play. Once grabbed, use keyboard shortcuts to move probe. Space to release.'; },
+    phMeterProbeHelpText() { return 'Look for pH probe to play. Once grabbed, use keyboard shortcuts to move probe. Space to release.'; },
     controlsHeading() {
       return 'Beaker and pH Meter Controls';
     },

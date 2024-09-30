@@ -32,35 +32,36 @@ export default () => {
    * Enumeration Mappings (value => enumeration value)
    *********************************************/
 
-  // Qualitative Total Volume Ranges
+    // Qualitative Total Volume Ranges
   const totalVolumeToEnum = totalVolume => {
-    if ( totalVolume === 0 ) {
-      return 'empty';
-    }
-    else if ( totalVolume < 0.3 ) {
-      return 'nearlyEmpty';
-    }
-    else if ( totalVolume < 0.595 ) {
-      return 'underHalfFull';
-    }
-    else if ( totalVolume < 0.605 ) {
-      return 'halfFull';
-    }
-    else if ( totalVolume < 0.9 ) {
-      return 'overHalfFull';
-    }
-    else if ( totalVolume < 1.195 ) {
-      return 'nearlyFull';
-    }
-    else {
-      return 'full';
-    }
-  };
+      if ( totalVolume === 0 ) {
+        return 'empty';
+      }
+      else if ( totalVolume < 0.3 ) {
+        return 'nearlyEmpty';
+      }
+      else if ( totalVolume < 0.595 ) {
+        return 'underHalfFull';
+      }
+      else if ( totalVolume < 0.605 ) {
+        return 'halfFull';
+      }
+      else if ( totalVolume < 0.9 ) {
+        return 'overHalfFull';
+      }
+      else if ( totalVolume < 1.195 ) {
+        return 'nearlyFull';
+      }
+      else {
+        return 'full';
+      }
+    };
+
   // pH Qualitative Ranges
-    const phValueToEnum = phValue => {
-   if(phValue === null) {
-     return 'none';
-   }
+  const phValueToEnum = phValue => {
+    if ( phValue === null ) {
+      return 'none';
+    }
     else if ( phValue <= 1 ) {
       return 'extremelyAcidic';
     }
@@ -69,7 +70,7 @@ export default () => {
     }
     else if ( phValue <= 5 ) {
       return 'moderatelyAcidic';
-    } 
+    }
     else if ( phValue < 7 ) {
       return 'slightlyAcidic';
     }
@@ -91,61 +92,72 @@ export default () => {
   };
 
   // Added Water Volume
-  const addedWaterVolumeToEnum = (addedWaterVolume, solutionTotalVolume) => {
-    const percentAddedWater = ( addedWaterVolume/solutionTotalVolume );
-    if ( percentAddedWater === 0 ) {
-      return 'no';
-    }
-    else if ( percentAddedWater <= 0.1 ) {
-      return 'aTinyBitOf';
-    }
-    else if ( percentAddedWater <=  0.25 ) {
-      return 'aLittle';
-    }
-    else if ( percentAddedWater < 0.495 ) {
-      return 'some';
-    }
-    else if ( percentAddedWater < 0.505  ) {
+  const addedWaterVolumeToEnum = ( addedWaterVolume, solutionTotalVolume ) => {
+
+    // Round values so that the description for 'equal' aligns with the displayed values in the sim
+    const roundedWaterVolume = phet.dot.Utils.toFixedNumber( addedWaterVolume, 3 );
+    const roundedTotalVolume = phet.dot.Utils.toFixedNumber( solutionTotalVolume, 3 );
+    const percentAddedWater = roundedWaterVolume / roundedTotalVolume;
+
+    const amountsEqual = phet.dot.Utils.equalsEpsilon( roundedWaterVolume, roundedTotalVolume - roundedWaterVolume, 0.02 );
+
+    if ( amountsEqual ) {
+
+      // Amounts of added water are equal.
       return 'equalAmountsOf';
     }
-    else if ( percentAddedWater < 0.75 ) {
-      return 'aFairAmountOf';
-    }
-    else if ( percentAddedWater < 0.90  ) {
-      return 'lotsOf';
-    }
     else {
-      return 'mostly';
+      if ( percentAddedWater === 0 ) {
+        return 'no';
+      }
+      else if ( percentAddedWater <= 0.1 ) {
+        return 'aTinyBitOf';
+      }
+      else if ( percentAddedWater <= 0.25 ) {
+        return 'aLittle';
+      }
+      else if ( percentAddedWater < 0.49 ) {
+        return 'some';
+      }
+      else if ( percentAddedWater < 0.75 ) {
+        return 'aFairAmountOf';
+      }
+      else if ( percentAddedWater < 0.90 ) {
+        return 'lotsOf';
+      }
+      else {
+        return 'mostly';
+      }
     }
   };
 
   // Solute / Solution Colors without added water 
   const soluteToColorEnum = ( solute ) => {
-    if ( solute === 'BATTERY_ACID' || solute === 'DRAIN_CLEANER' ) {
+    if ( solute === 'batteryAcid' || solute === 'drainCleaner' ) {
       return 'brightYellow';
     }
-    else if ( solute === 'BLOOD' ) {
+    else if ( solute === 'blood' ) {
       return 'red';
     }
-    else if ( solute === 'CHICKEN_SOUP') {
+    else if ( solute === 'chickenSoup' ) {
       return 'darkYellow';
     }
-    else if ( solute === 'COFFEE') {
+    else if ( solute === 'coffee' ) {
       return 'brown';
     }
-    else if ( solute === 'HAND_SOAP') {
+    else if ( solute === 'handSoap' ) {
       return 'lavender';
     }
-    else if ( solute === 'MILK') {
+    else if ( solute === 'milk' ) {
       return 'white';
     }
-    else if ( solute === 'ORANGE_JUICE') {
+    else if ( solute === 'orangeJuice' ) {
       return 'orange';
     }
-    else if ( solute === 'SODA') {
+    else if ( solute === 'soda' ) {
       return 'limeGreen';
     }
-    else if ( solute === 'VOMIT') {
+    else if ( solute === 'vomit' ) {
       return 'salmon';
     }
     else {
@@ -153,15 +165,23 @@ export default () => {
     }
   };
 
-  const flowRateToEnum = flowRate => {
+  // Maps the flow rate to a value that can be used to describe how open the faucet is.
+  // The returned "enumeration" value can be used to create a description string.
+  const flowRateToFaucetOpenEnum = flowRate => {
     if ( flowRate === 0 ) {
-      return 'off';
+      return 'closed';
+    }
+    else if ( flowRate < 0.05 ) {
+      return 'slightlyOpen';
     }
     else if ( flowRate < 0.15 ) {
-      return 'slow';
+      return 'openABit';
+    }
+    else if ( flowRate < 0.25 ) {
+      return 'openALot'
     }
     else {
-      return 'fast';
+      return 'fullyOpen';
     }
   };
 
@@ -178,10 +198,10 @@ export default () => {
          * Screen Summary State Descriptions
          *********************************************/
 
-        // Node that we will update with dynamic content
+          // Node that we will update with dynamic content
         const dynamicScreenSummaryNode = context.createNode( {
-          tagName: 'p'
-        } );
+            tagName: 'p'
+          } );
 
         // Screen summary content
         context.nodeSet( macroScreenView, 'screenSummaryContent', context.createNode( {
@@ -215,7 +235,7 @@ export default () => {
           solutionTotalVolumeProperty,
           addedWaterVolumeProperty,
           solutionPHProperty,
-          meterPHProperty,
+          meterPHProperty
 
         ], (
           solute,
@@ -224,15 +244,15 @@ export default () => {
           solutionPH,
           meterPH
         ) => {
-          
+
           // console.log( `STV:` + solutionTotalVolume, `STVP:` + solutionTotalVolumeProperty)
           dynamicScreenSummaryNode.innerContent = strings.dynamicScreenSummary(
             solute.tandemName,
             totalVolumeToEnum( solutionTotalVolume ),
             solutionPH,
             meterPH,
-            phValueToEnum( solutionPH ), 
-            solutionTotalVolume, 
+            phValueToEnum( solutionPH ),
+            solutionTotalVolume,
             soluteToColorEnum( solute.tandemName ),
             addedWaterVolumeToEnum( addedWaterVolume, solutionTotalVolume )
           );
@@ -242,7 +262,7 @@ export default () => {
          * Play Area State Descriptions
          *********************************************/
 
-        // Beaker
+          // Beaker
         const beakerNode = context.get( 'phScaleBasics.macroScreen.view.beakerNode' );
         {
           context.nodeSet( beakerNode, 'tagName', 'div' );
@@ -250,7 +270,7 @@ export default () => {
           context.nodeSet( beakerNode, 'labelContent', strings.beakerHeading() );
         }
 
-         //pH Meter Heading
+        //pH Meter Heading
         const phMeterHeading = context.createNode( {
           tagName: 'h3',
           innerContent: strings.phMeterHeading()
@@ -291,10 +311,17 @@ export default () => {
           context.nodeSet( waterFaucetNode, 'accessibleName', strings.waterFaucetAccessibleName() );
           context.nodeSet( waterFaucetNode, 'helpText', strings.waterFaucetHelpText() );
           context.nodeSet( waterFaucetNode, 'pdomCreateAriaValueText', value => {
-            return strings.faucetAriaValueText( flowRateToEnum( value ) );
+
+            // reverseAlternativeInput is used, which makes the provided value 'inverted' - we need to re-invert it
+            // to describe it correctly.
+            // TODO: This is confusing, make better? The callback should provide an appropriate value to use.
+            const actualValue = 0.25 - value;
+            return strings.faucetAriaValueText( flowRateToFaucetOpenEnum( actualValue ) );
           } );
 
-          context.nodeSet( waterFaucetNode, 'keyboardStep', 0.1 );
+          // 5 steps to fully open
+          context.nodeSet( waterFaucetNode, 'keyboardStep', 0.25 / 5 );
+          context.nodeSet( waterFaucetNode, 'shiftKeyboardStep', 0.25 / 10 );
         }
 
         // Drain Faucet
@@ -303,8 +330,17 @@ export default () => {
           context.nodeSet( drainFaucetNode, 'accessibleName', strings.drainFaucetAccessibleName() );
           context.nodeSet( drainFaucetNode, 'helpText', strings.drainFaucetHelpText() );
           context.nodeSet( drainFaucetNode, 'pdomCreateAriaValueText', value => {
-            return strings.faucetAriaValueText( flowRateToEnum( value ) );
+
+            // reverseAlternativeInput is used, which makes the provided value 'inverted' - we need to re-invert it
+            // to describe it correctly.
+            // TODO: This is confusing, make better? The callback should provide an appropriate value to use.
+            const actualValue = 0.25 - value;
+            return strings.faucetAriaValueText( flowRateToFaucetOpenEnum( actualValue ) );
           } );
+
+          // 5 steps to fully open
+          context.nodeSet( drainFaucetNode, 'keyboardStep', 0.25 / 5 );
+          context.nodeSet( drainFaucetNode, 'shiftKeyboardStep', 0.25 / 10 );
         }
 
         /*********************************************
