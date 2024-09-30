@@ -229,8 +229,6 @@ export default () => {
         const solutionPHProperty = context.get( 'phScaleBasics.macroScreen.model.solution.pHProperty' );
         const meterPHProperty = context.get( 'phScaleBasics.macroScreen.model.pHMeter.pHProperty' );
         context.multilink( [
-          // TODO: context.get doesn't work for "This element is defined in" cases, e.g. model.solution.soluteProperty won't work
-          // TODO: add all properties that can change and need to be watched.
           soluteProperty,
           solutionTotalVolumeProperty,
           addedWaterVolumeProperty,
