@@ -77,6 +77,8 @@ export default () => {
     extremelyBasic: 'extremely basic'
   };
 
+// Flow-rate descriptions for water faucet and drain.
+// TODO: Add a qualitative region for 5 open regions to match 5 key presses.
   const flowRateMap = {
     closed: 'closed',
     slightlyOpen: 'slightly open',
