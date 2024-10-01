@@ -171,13 +171,19 @@ export default () => {
     if ( flowRate === 0 ) {
       return 'closed';
     }
-    else if ( flowRate < 0.05 ) {
-      return 'slightlyOpen';
+    else if ( flowRate <= 0.10 * 0.25 ) {
+      return 'openATinyBit';
     }
-    else if ( flowRate < 0.15 ) {
-      return 'openABit';
+    else if ( flowRate <= 0.30 * 0.25 ) {
+      return 'openALittle';
     }
-    else if ( flowRate < 0.25 ) {
+    else if ( flowRate < 0.48 * 0.25 ) {
+      return 'somewhatOpen';
+    }
+    else if ( flowRate < 0.52 * 0.25 ) {
+      return 'halfwayOpen';
+    }
+    else if ( flowRate < 1.00 * 0.25 ) {
       return 'openALot'
     }
     else {
@@ -318,8 +324,9 @@ export default () => {
           } );
 
           // 5 steps to fully open
-          context.nodeSet( waterFaucetNode, 'keyboardStep', 0.25 / 5 );
-          context.nodeSet( waterFaucetNode, 'shiftKeyboardStep', 0.25 / 10 );
+          context.nodeSet( waterFaucetNode, 'keyboardStep', 0.25 / 10 );
+          context.nodeSet( waterFaucetNode, 'shiftKeyboardStep', 0.25 / 20 );
+          context.nodeSet( waterFaucetNode, 'pageKeyboardStep', 0.25 / 2 );
         }
 
         // Drain Faucet
@@ -337,8 +344,9 @@ export default () => {
           } );
 
           // 5 steps to fully open
-          context.nodeSet( drainFaucetNode, 'keyboardStep', 0.25 / 5 );
-          context.nodeSet( drainFaucetNode, 'shiftKeyboardStep', 0.25 / 10 );
+          context.nodeSet( drainFaucetNode, 'keyboardStep', 0.25 / 10 );
+          context.nodeSet( drainFaucetNode, 'shiftKeyboardStep', 0.25 / 20  );
+          context.nodeSet( drainFaucetNode, 'pageKeyboardStep', 0.25 / 2 );
         }
 
         /*********************************************

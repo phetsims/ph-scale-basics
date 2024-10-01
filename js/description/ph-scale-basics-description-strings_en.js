@@ -81,8 +81,10 @@ export default () => {
 // TODO: Add a qualitative region for 5 open regions to match 5 key presses.
   const flowRateMap = {
     closed: 'closed',
-    slightlyOpen: 'slightly open',
-    openABit: 'open a bit',
+    openATinyBit: 'open a tiny bit',
+    openALittle: 'open a little',  
+    somewhatOpen: 'somewhat open', 
+    halfwayOpen: 'halfway open', 
     openALot: 'open a lot',
     fullyOpen: 'fully open'
   };
@@ -208,7 +210,8 @@ export default () => {
     faucetAriaValueText(
       flowRateEnum
     ) {
-      return `Faucet is ${flowRateMap[ flowRateEnum ]}`;
+      // E.g. on focus: Water Faucet, closed
+      return `${flowRateMap[ flowRateEnum ]}`;
     },
 
     /*********************************************
