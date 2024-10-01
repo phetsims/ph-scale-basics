@@ -229,7 +229,7 @@
 </head>
 <body>
 
-<div id="columns" class="editor-collapsed">
+<div id="columns">
   <div id="editor-pane">
     <div id="logic-editor"></div>
     <div id="strings-editor"></div>
@@ -468,14 +468,34 @@
     }
   } );
 
-  // Toggle the editor
-  document.getElementById( 'editor-toggle-button' ).addEventListener( 'click', () => {
+  /**
+   * Toggles the editors between showing and hidden. Returns true if the editors are now showing.
+   * @returns {boolean}
+   */
+  const toggleEditors = () => {
     const columns = document.getElementById( 'columns' );
     columns.classList.toggle( 'editor-collapsed' );
 
+    const isShown = !columns.className.includes( 'editor-collapsed' );
+
+    // The editors cannot receive input or DOM focus when they are collapsed (or they become a focus trap)
+    // nocursor makes focusing on the editor impossible
+    logicEditor.setOption( 'readOnly', isShown ? false : 'nocursor' );
+    stringsEditor.setOption( 'readOnly', isShown ? false : 'nocursor' );
+
+    return isShown;
+  };
+
+  // So that editors are hidden by default
+  toggleEditors();
+
+  // Toggle the editor
+  document.getElementById( 'editor-toggle-button' ).addEventListener( 'click', () => {
+    const isShown = toggleEditors();
+
     // Reload the logic editors to whatever is saved because the editor values cannot
     // be set while the editor is collapsed
-    if ( !columns.className.includes( 'editor-collapsed' ) ) {
+    if ( isShown ) {
       reloadEditorDefaults();
     }
   } );
