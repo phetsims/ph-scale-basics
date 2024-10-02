@@ -323,7 +323,7 @@ export default () => {
             return strings.faucetAriaValueText( flowRateToFaucetOpenEnum( actualValue ) );
           } );
 
-          // 5 steps to fully open
+          /// 10 steps to fully open; 20 small steps; 2 big steps
           context.nodeSet( waterFaucetNode, 'keyboardStep', 0.25 / 10 );
           context.nodeSet( waterFaucetNode, 'shiftKeyboardStep', 0.25 / 20 );
           context.nodeSet( waterFaucetNode, 'pageKeyboardStep', 0.25 / 2 );
@@ -343,7 +343,7 @@ export default () => {
             return strings.faucetAriaValueText( flowRateToFaucetOpenEnum( actualValue ) );
           } );
 
-          // 5 steps to fully open
+          // 10 steps to fully open; 20 small steps; 2 big steps
           context.nodeSet( drainFaucetNode, 'keyboardStep', 0.25 / 10 );
           context.nodeSet( drainFaucetNode, 'shiftKeyboardStep', 0.25 / 20  );
           context.nodeSet( drainFaucetNode, 'pageKeyboardStep', 0.25 / 2 );
