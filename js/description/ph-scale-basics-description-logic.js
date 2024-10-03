@@ -283,8 +283,26 @@ export default () => {
 
         // pH Meter Probe
         const phMeterProbeNode = context.get( 'phScaleBasics.macroScreen.view.pHMeterNode.probeNode' );
-        context.nodeSet( phMeterProbeNode, 'helpText', strings.phMeterProbeHelpText() );
-        {
+
+        // ph Meter Probe GrabDragInteraction - this will only be available when testing with a query parameter
+        const phMeterProbeGrabDragInteraction = context.get( 'phScaleBasics.macroScreen.view.pHMeterNode.probeNode.grabDragInteraction' );
+        if ( phMeterProbeGrabDragInteraction ) {
+          context.nodeSet( phMeterProbeGrabDragInteraction, 'idleStateAccessibleName', strings.phMeterProbeGrabAccessibleName() );
+          context.nodeSet( phMeterProbeGrabDragInteraction, 'grabbedStateAccessibleName', strings.phMeterProbeAccessibleName() );
+          context.nodeSet( phMeterProbeGrabDragInteraction, 'keyboardHelpText', strings.phMeterProbeHelpText() );
+
+          context.nodeSet( phMeterProbeGrabDragInteraction, 'onGrab', () => {
+            console.log( 'Grabbed!' );
+          } );
+
+          context.nodeSet( phMeterProbeGrabDragInteraction, 'onRelease', () => {
+            console.log( 'Released!' );
+          } );
+        }
+        else {
+
+          // Not using GrabDragInteraction, so we can set content on the meter probe node directly.
+          context.nodeSet( phMeterProbeNode, 'helpText', strings.phMeterProbeHelpText() );
           context.nodeSet( phMeterProbeNode, 'accessibleName', strings.phMeterProbeAccessibleName() );
         }
 
@@ -345,7 +363,7 @@ export default () => {
 
           // 10 steps to fully open; 20 small steps; 2 big steps
           context.nodeSet( drainFaucetNode, 'keyboardStep', 0.25 / 10 );
-          context.nodeSet( drainFaucetNode, 'shiftKeyboardStep', 0.25 / 20  );
+          context.nodeSet( drainFaucetNode, 'shiftKeyboardStep', 0.25 / 20 );
           context.nodeSet( drainFaucetNode, 'pageKeyboardStep', 0.25 / 2 );
         }
 

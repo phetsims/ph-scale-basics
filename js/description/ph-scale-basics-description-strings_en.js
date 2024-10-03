@@ -191,6 +191,7 @@ export default () => {
       return 'pH Meter and Read Out';
     },
     phMeterProbeAccessibleName() { return 'pH Probe'; },
+    phMeterProbeGrabAccessibleName() { return 'Grab pH Probe'; },
     phMeterProbeHelpText() { return 'Look for pH probe to play. Once grabbed, use keyboard shortcuts to move probe. Space to release.'; },
     controlsHeading() {
       return 'Beaker and pH Meter Controls';
