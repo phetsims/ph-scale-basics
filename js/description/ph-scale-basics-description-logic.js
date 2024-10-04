@@ -97,37 +97,39 @@ export default () => {
     // Round values so that the description for 'equal' aligns with the displayed values in the sim
     const roundedWaterVolume = phet.dot.Utils.toFixedNumber( addedWaterVolume, 3 );
     const roundedTotalVolume = phet.dot.Utils.toFixedNumber( solutionTotalVolume, 3 );
-    const percentAddedWater = roundedWaterVolume / roundedTotalVolume;
+
+    let percentAddedWater = 0;
+    if ( roundedTotalVolume > 0 ) {
+      percentAddedWater = roundedWaterVolume / roundedTotalVolume;
+    }
 
     const amountsEqual = phet.dot.Utils.equalsEpsilon( roundedWaterVolume, roundedTotalVolume - roundedWaterVolume, 0.02 );
 
-    if ( amountsEqual ) {
+    if ( percentAddedWater === 0 ) {
+      return 'no';
+    }
+    else if ( amountsEqual ) {
 
       // Amounts of added water are equal.
       return 'equalAmountsOf';
     }
+    else if ( percentAddedWater <= 0.1 ) {
+      return 'aTinyBitOf';
+    }
+    else if ( percentAddedWater <= 0.25 ) {
+      return 'aLittle';
+    }
+    else if ( percentAddedWater < 0.49 ) {
+      return 'some';
+    }
+    else if ( percentAddedWater < 0.75 ) {
+      return 'aFairAmountOf';
+    }
+    else if ( percentAddedWater < 0.90 ) {
+      return 'lotsOf';
+    }
     else {
-      if ( percentAddedWater === 0 ) {
-        return 'no';
-      }
-      else if ( percentAddedWater <= 0.1 ) {
-        return 'aTinyBitOf';
-      }
-      else if ( percentAddedWater <= 0.25 ) {
-        return 'aLittle';
-      }
-      else if ( percentAddedWater < 0.49 ) {
-        return 'some';
-      }
-      else if ( percentAddedWater < 0.75 ) {
-        return 'aFairAmountOf';
-      }
-      else if ( percentAddedWater < 0.90 ) {
-        return 'lotsOf';
-      }
-      else {
-        return 'mostly';
-      }
+      return 'mostly';
     }
   };
 
@@ -228,19 +230,33 @@ export default () => {
           ]
         } ) );
 
-        // Dynamic content
-        const addedWaterVolumeProperty = context.get( 'phScaleBasics.macroScreen.model.solution.waterVolumeProperty' );
         const solutionTotalVolumeProperty = context.get( 'phScaleBasics.macroScreen.model.solution.totalVolumeProperty' );
-        const soluteProperty = context.get( 'phScaleBasics.macroScreen.model.dropper.soluteProperty' );
+
+        // Total volume formatted to 2 decimal places.
+        const formattedTotalVolumeProperty = context.createDerivedProperty( [ solutionTotalVolumeProperty ], totalVolume => {
+          return phet.dot.Utils.toFixedNumber( totalVolume, 2 );
+        } )
+
         const solutionPHProperty = context.get( 'phScaleBasics.macroScreen.model.solution.pHProperty' );
         const meterPHProperty = context.get( 'phScaleBasics.macroScreen.model.pHMeter.pHProperty' );
+
+        // Formatted values, which should generally be used when displaying values to the user.
+        const formattedSolutionPHProperty = context.createDerivedProperty( [ solutionPHProperty ], solutionPH => {
+          return solutionPH === null ? null : phet.dot.Utils.toFixedNumber( solutionPH, 2 );
+        } );
+        const formattedMeterPHProperty = context.createDerivedProperty( [ meterPHProperty ], meterPH => {
+          return meterPH === null ? null : phet.dot.Utils.toFixedNumber( meterPH, 2 );
+        } );
+
+        // Dynamic content
+        const addedWaterVolumeProperty = context.get( 'phScaleBasics.macroScreen.model.solution.waterVolumeProperty' );
+        const soluteProperty = context.get( 'phScaleBasics.macroScreen.model.dropper.soluteProperty' );
         context.multilink( [
           soluteProperty,
-          solutionTotalVolumeProperty,
+          formattedTotalVolumeProperty,
           addedWaterVolumeProperty,
-          solutionPHProperty,
-          meterPHProperty
-
+          formattedSolutionPHProperty,
+          formattedMeterPHProperty
         ], (
           solute,
           solutionTotalVolume,
@@ -266,12 +282,57 @@ export default () => {
          * Play Area State Descriptions
          *********************************************/
 
-          // Beaker
+          // Solution in Beaker
         const beakerNode = context.get( 'phScaleBasics.macroScreen.view.beakerNode' );
+
+        // A parent for additional descriptions for the solution in the beaker
+        const solutionDescriptionParentNode = context.createNode( { tagName: 'div' } );
+        macroScreenView.addChild( solutionDescriptionParentNode );
         {
           context.nodeSet( beakerNode, 'tagName', 'div' );
           context.nodeSet( beakerNode, 'labelTagName', 'h3' );
           context.nodeSet( beakerNode, 'labelContent', strings.beakerHeading() );
+
+          const beakerParagraphNode = context.createNode( { tagName: 'p' } );
+          const beakerNodeUnorderedList = context.createNode( { tagName: 'ul' } );
+
+          solutionDescriptionParentNode.children = [ beakerParagraphNode, beakerNodeUnorderedList ];
+
+          context.multilink( [ soluteProperty, formattedTotalVolumeProperty ], ( solute, totalVolume ) => {
+            beakerParagraphNode.visible = totalVolume !== 0;
+            beakerParagraphNode.innerContent = strings.theSolutionParagraph( solute.tandemName );
+          } );
+
+          const addedWaterVolumeListItemNode = context.createNode( {
+            tagName: 'li'
+          } );
+          const totalSolutionVolumeListItemNode = context.createNode( { tagName: 'li' } );
+
+          context.multilink( [ soluteProperty, addedWaterVolumeProperty, formattedTotalVolumeProperty ], ( solute, addedWaterVolume, solutionTotalVolume ) => {
+            const addedWaterVolumeEnum = addedWaterVolumeToEnum( addedWaterVolume, solutionTotalVolume );
+            const soluteColorEnum = soluteToColorEnum( solute.tandemName );
+            const totalVolumeEnum = totalVolumeToEnum( solutionTotalVolume );
+
+            addedWaterVolumeListItemNode.visible = totalVolumeEnum !== 'empty';
+
+            if ( soluteColorEnum === 'colorless' || addedWaterVolumeEnum === 'no' ) {
+              addedWaterVolumeListItemNode.innerContent = strings.addedVolumeDescription( soluteColorEnum, addedWaterVolumeEnum );
+            }
+            else {
+
+              // A slightly modified description to indicate that the color is 'lighter' when water is added.
+              addedWaterVolumeListItemNode.innerContent = strings.addedVolumeDescriptionWithWater( soluteColorEnum, addedWaterVolumeEnum );
+            }
+          } );
+
+          context.multilink( [ formattedTotalVolumeProperty ], solutionTotalVolume => {
+            totalSolutionVolumeListItemNode.innerContent = strings.totalSolutionVolumeDescription( totalVolumeToEnum( solutionTotalVolume ), solutionTotalVolume );
+          } );
+
+          beakerNodeUnorderedList.children = [
+            addedWaterVolumeListItemNode,
+            totalSolutionVolumeListItemNode
+          ]
         }
 
         //pH Meter Heading
@@ -280,6 +341,41 @@ export default () => {
           innerContent: strings.phMeterHeading()
         } );
         macroScreenView.addChild( phMeterHeading );
+
+        // a parent container for the pH meter description
+        const phMeterDescriptionParentNode = context.createNode( { tagName: 'div' } );
+        macroScreenView.addChild( phMeterDescriptionParentNode );
+
+        // a description of the meter location, and then a list of decriptions for other meter state
+        const phMeterLocationParagraphNode = context.createNode( { tagName: 'p' } );
+        const phMeterDescriptionListNode = context.createNode( { tagName: 'ul' } );
+
+        // add the nodes to the parent
+        phMeterDescriptionParentNode.children = [ phMeterLocationParagraphNode, phMeterDescriptionListNode ];
+
+        // individual list items
+        const phValueItemNode = context.createNode( { tagName: 'li' } );
+        const qualitativePHItemNode = context.createNode( { tagName: 'li' } );
+        const meterDescriptionItemNode = context.createNode( { tagName: 'li' } );
+
+        // add the list items to the list
+        phMeterDescriptionListNode.children = [
+          phValueItemNode,
+          qualitativePHItemNode,
+          meterDescriptionItemNode
+        ];
+
+        phMeterLocationParagraphNode.innerContent = `(placeholder for probe location)`;
+
+        context.link( formattedMeterPHProperty, meterPH => {
+          phValueItemNode.visible = meterPH !== null;
+          qualitativePHItemNode.visible = meterPH !== null;
+
+          phValueItemNode.innerContent = strings.measuredPHDescription( meterPH );
+          qualitativePHItemNode.innerContent = strings.qualitativePHDescription( phValueToEnum( meterPH ) );
+        } );
+
+        meterDescriptionItemNode.innerContent = '(placeholder for meter description)';
 
         // pH Meter Probe
         const phMeterProbeNode = context.get( 'phScaleBasics.macroScreen.view.pHMeterNode.probeNode' );
@@ -380,7 +476,9 @@ export default () => {
         // Play Area
         context.nodeSet( macroScreenView.pdomPlayAreaNode, 'pdomOrder', [
           beakerNode,
+          solutionDescriptionParentNode,
           phMeterHeading,
+          phMeterDescriptionParentNode,
           controlsHeading,
           soluteComboBox,
           dropperNodeButton,

@@ -82,9 +82,9 @@ export default () => {
   const flowRateMap = {
     closed: 'closed',
     openATinyBit: 'open a tiny bit',
-    openALittle: 'open a little',  
-    somewhatOpen: 'somewhat open', 
-    halfwayOpen: 'halfway open', 
+    openALittle: 'open a little',
+    somewhatOpen: 'somewhat open',
+    halfwayOpen: 'halfway open',
     openALot: 'open a lot',
     fullyOpen: 'fully open'
   };
@@ -187,8 +187,26 @@ export default () => {
     beakerHeading() {
       return 'Solution in Beaker';
     },
+    theSolutionParagraph( solute ) {
+      return `The ${soluteMap[ solute ]} solution`;
+    },
+    addedVolumeDescription( soluteColorEnum, addedWaterVolumeEnum ) {
+      return `is ${soluteColorMap[ soluteColorEnum ]} with ${addedWaterVolumeMap[ addedWaterVolumeEnum ]} added water`;
+    },
+    addedVolumeDescriptionWithWater( soluteColorEnum, addedWaterVolumeEnum ) {
+      return `is lighter ${soluteColorMap[ soluteColorEnum ]} with ${addedWaterVolumeMap[ addedWaterVolumeEnum ]} added water`;
+    },
+    totalSolutionVolumeDescription( totalVolumeEnum, solutionTotalVolume ) {
+      return `${solutionTotalVolume} liters, ${totalVolumeMap[ totalVolumeEnum ]}`;
+    },
     phMeterHeading() {
       return 'pH Meter and Read Out';
+    },
+    measuredPHDescription( meterPH ) {
+      return `has a pH of ${meterPH}`;
+    },
+    qualitativePHDescription( phEnum ) {
+      return `is ${phValueMap[ phEnum ]}`;
     },
     phMeterProbeAccessibleName() { return 'pH Probe'; },
     phMeterProbeGrabAccessibleName() { return 'Grab pH Probe'; },
