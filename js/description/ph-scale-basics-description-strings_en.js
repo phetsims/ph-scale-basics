@@ -185,7 +185,7 @@ export default () => {
      *********************************************/
 
     beakerHeading() {
-      return 'The Beaker';
+      return 'Solution in Beaker';
     },
     phMeterHeading() {
       return 'pH Meter and Read Out';
@@ -194,7 +194,7 @@ export default () => {
     phMeterProbeGrabAccessibleName() { return 'Grab pH Probe'; },
     phMeterProbeHelpText() { return 'Look for pH probe to play. Once grabbed, use keyboard shortcuts to move probe. Space to release.'; },
     controlsHeading() {
-      return 'Beaker and pH Meter Controls';
+      return 'Solution and pH Meter Controls';
     },
     soluteComboBoxAccessibleName() {
       return 'Solution';
