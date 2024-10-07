@@ -187,8 +187,11 @@ export default () => {
     beakerHeading() {
       return 'Solution in Beaker';
     },
-    theSolutionParagraph( solute ) {
-      return `The ${soluteMap[ solute ]} solution`;
+    solutionParagraph( solute ) {
+      return `${soluteMap[ solute ]}`;
+    },
+    isNeutral() {
+      return 'is neutral';
     },
     addedVolumeDescription( soluteColorEnum, addedWaterVolumeEnum ) {
       return `is ${soluteColorMap[ soluteColorEnum ]} with ${addedWaterVolumeMap[ addedWaterVolumeEnum ]} added water`;

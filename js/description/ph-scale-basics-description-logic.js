@@ -300,7 +300,7 @@ export default () => {
 
           context.multilink( [ soluteProperty, formattedTotalVolumeProperty ], ( solute, totalVolume ) => {
             beakerParagraphNode.visible = totalVolume !== 0;
-            beakerParagraphNode.innerContent = strings.theSolutionParagraph( solute.tandemName );
+            beakerParagraphNode.innerContent = strings.solutionParagraph( solute.tandemName );
           } );
 
           const addedWaterVolumeListItemNode = context.createNode( {
@@ -315,7 +315,11 @@ export default () => {
 
             addedWaterVolumeListItemNode.visible = totalVolumeEnum !== 'empty';
 
-            if ( soluteColorEnum === 'colorless' || addedWaterVolumeEnum === 'no' ) {
+
+            if ( solute === phet.phScale.Solute.WATER ) {
+              addedWaterVolumeListItemNode.innerContent = strings.isNeutral();
+            }
+            else if ( soluteColorEnum === 'colorless' || addedWaterVolumeEnum === 'no' ) {
               addedWaterVolumeListItemNode.innerContent = strings.addedVolumeDescription( soluteColorEnum, addedWaterVolumeEnum );
             }
             else {
