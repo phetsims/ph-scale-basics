@@ -35,7 +35,6 @@ export default () => {
     // Qualitative Total Volume Ranges
   const totalVolumeToEnum = totalVolume => {
       if ( totalVolume === 0 ) {
-        return 'empty';
       }
       else if ( totalVolume < 0.3 ) {
         return 'nearlyEmpty';
@@ -156,7 +155,7 @@ export default () => {
     else if ( solute === 'orangeJuice' ) {
       return 'orange';
     }
-    else if ( solute === 'soda' ) {
+    else if ( solute === 'sodaPop' ) {
       return 'limeGreen';
     }
     else if ( solute === 'vomit' ) {

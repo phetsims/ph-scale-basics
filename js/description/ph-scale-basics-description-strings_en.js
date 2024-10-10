@@ -12,18 +12,18 @@ export default () => {
    *********************************************/
 
   const soluteMap = {
-    batteryAcid: 'battery acid',
-    blood: 'blood',
-    chickenSoup: 'chicken soup',
-    coffee: 'coffee',
-    drainCleaner: 'drain cleaner',
-    handSoap: 'hand soap',
-    milk: 'milk',
-    orangeJuice: 'orange juice',
-    soda: 'soda',
-    spit: 'spit',
-    vomit: 'vomit',
-    water: 'water'
+    batteryAcid: 'Battery Acid',
+    blood: 'Blood',
+    chickenSoup: 'Chicken Soup',
+    coffee: 'Coffee',
+    drainCleaner: 'Drain Cleaner',
+    handSoap: 'Hand Soap',
+    milk: 'Milk',
+    orangeJuice: 'Orange Juice',
+    sodaPop: 'Soda Pop',
+    spit: 'Spit',
+    vomit: 'Vomit',
+    water: 'Water'
   };
 
 // Soute/Solution Colors
