@@ -155,7 +155,7 @@ export default () => {
     else if ( solute === 'orangeJuice' ) {
       return 'orange';
     }
-    else if ( solute === 'sodaPop' ) {
+    else if ( solute === 'soda' ) {
       return 'limeGreen';
     }
     else if ( solute === 'vomit' ) {

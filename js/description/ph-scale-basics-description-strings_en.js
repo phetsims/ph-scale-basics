@@ -20,7 +20,7 @@ export default () => {
     handSoap: 'Hand Soap',
     milk: 'Milk',
     orangeJuice: 'Orange Juice',
-    sodaPop: 'Soda Pop',
+    soda: 'Soda Pop',
     spit: 'Spit',
     vomit: 'Vomit',
     water: 'Water'
