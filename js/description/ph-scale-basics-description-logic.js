@@ -417,7 +417,7 @@ export default () => {
         context.nodeSet( soluteComboBox, 'helpText', strings.soluteComboBoxHelpText() );
         context.nodeSet( soluteComboBox, 'accessibleName', strings.soluteComboBoxAccessibleName() );
         for ( const solute of solutes ) {
-          context.propertySet( soluteComboBox.a11yNamePropertyMap.get( solute ), strings.soluteName( solute.tandemName ) );
+          context.propertySet( soluteComboBox.accessibleNamePropertyMap.get( solute ), strings.soluteName( solute.tandemName ) );
         }
 
         // Dropper
