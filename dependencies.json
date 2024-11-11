@@ -1,5 +1,5 @@
 {
-  "comment": "# ph-scale-basics 1.7.0-descriptionProperties.2 Mon Nov 11 2024 18:12:37 GMT-0500 (Eastern Standard Time)",
+  "comment": "# ph-scale-basics 1.7.0-descriptionProperties.2 Mon Nov 11 2024 18:18:05 GMT-0500 (Eastern Standard Time)",
   "assert": {
     "sha": "eceb789a9dbd8c79eecc8f356e815ff5454b52d4",
     "branch": "main"
@@ -37,11 +37,11 @@
     "branch": "main"
   },
   "ph-scale": {
-    "sha": "c2c92ec888e1ac00f821b7cfb911feebf039c649",
-    "branch": "main"
+    "sha": "1ab5ce675e22f8b737ad2d67de0cdd01bf9d4c59",
+    "branch": "descriptionProperties"
   },
   "ph-scale-basics": {
-    "sha": "65ed239c2c9745d985253e7065373bf2bdc830e5",
+    "sha": "a9b343708cec49fe3634a75c9446434991b1d0a9",
     "branch": "descriptionProperties"
   },
   "phet-core": {
