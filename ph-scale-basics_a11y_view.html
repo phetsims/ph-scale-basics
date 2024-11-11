@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="phet-sim-level" content="production">
 
   <!--have to scroll right and left! allows to resize also-->
@@ -250,7 +250,9 @@
 
   // in unbuilt mode and on phet-server, the brand suffix is removed
   const filenameEnding = ( window.location.hostname === 'phet.colorado.edu' || !IS_BUILT ) ? '.html' : '_phet.html';
-  const repoLocale = 'ph-scale-basics_en';
+
+  // Unbuilt sims include all locales in the en file, built versions only include all strings in the all file
+  const repoLocale = `ph-scale-basics_${IS_BUILT ? 'all' : 'en'}`;
   const simURL = repoLocale + filenameEnding + simulationQueryString;
 
   // set the source of the sim iframe

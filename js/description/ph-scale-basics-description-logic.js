@@ -416,9 +416,11 @@ export default () => {
         const soluteComboBox = context.get( 'phScaleBasics.macroScreen.view.soluteComboBox' );
         context.nodeSet( soluteComboBox, 'helpText', strings.soluteComboBoxHelpText() );
         context.nodeSet( soluteComboBox, 'accessibleName', strings.soluteComboBoxAccessibleName() );
-        for ( const solute of solutes ) {
-          context.propertySet( soluteComboBox.accessibleNamePropertyMap.get( solute ), strings.soluteName( solute.tandemName ) );
-        }
+
+        // The accessibleNamePropertyMap was removed in https://github.com/phetsims/sun/issues/865
+        // for ( const solute of solutes ) {
+        //   context.propertySet( soluteComboBox.accessibleNamePropertyMap.get( solute ), strings.soluteName( solute.tandemName ) );
+        // }
 
         // Dropper
         const dropperNodeButton = context.get( 'phScaleBasics.macroScreen.view.dropperNode.button' );
