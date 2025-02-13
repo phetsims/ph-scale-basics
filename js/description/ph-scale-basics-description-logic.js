@@ -132,7 +132,7 @@ export default () => {
     }
   };
 
-  // Solute / Solution Colors without added water 
+  // Solute / Solution Colors without added water
   const soluteToColorEnum = ( solute ) => {
     if ( solute === 'batteryAcid' || solute === 'drainCleaner' ) {
       return 'brightYellow';
@@ -401,7 +401,7 @@ export default () => {
         else {
 
           // Not using GrabDragInteraction, so we can set content on the meter probe node directly.
-          context.nodeSet( phMeterProbeNode, 'helpText', strings.phMeterProbeHelpText() );
+          context.nodeSet( phMeterProbeNode, 'accessibleHelpText', strings.phMeterProbeHelpText() );
           context.nodeSet( phMeterProbeNode, 'accessibleName', strings.phMeterProbeAccessibleName() );
         }
 
@@ -414,7 +414,7 @@ export default () => {
 
         // Solute ComboBox
         const soluteComboBox = context.get( 'phScaleBasics.macroScreen.view.soluteComboBox' );
-        context.nodeSet( soluteComboBox, 'helpText', strings.soluteComboBoxHelpText() );
+        context.nodeSet( soluteComboBox, 'accessibleHelpText', strings.soluteComboBoxHelpText() );
         context.nodeSet( soluteComboBox, 'accessibleName', strings.soluteComboBoxAccessibleName() );
 
         // The accessibleNamePropertyMap was removed in https://github.com/phetsims/sun/issues/865
@@ -432,7 +432,7 @@ export default () => {
         const waterFaucetNode = context.get( 'phScaleBasics.macroScreen.view.waterFaucetNode.faucetNode' );
         {
           context.nodeSet( waterFaucetNode, 'accessibleName', strings.waterFaucetAccessibleName() );
-          context.nodeSet( waterFaucetNode, 'helpText', strings.waterFaucetHelpText() );
+          context.nodeSet( waterFaucetNode, 'accessibleHelpText', strings.waterFaucetHelpText() );
           context.nodeSet( waterFaucetNode, 'pdomCreateAriaValueText', value => {
 
             // reverseAlternativeInput is used, which makes the provided value 'inverted' - we need to re-invert it
@@ -452,7 +452,7 @@ export default () => {
         const drainFaucetNode = context.get( 'phScaleBasics.macroScreen.view.drainFaucetNode' );
         {
           context.nodeSet( drainFaucetNode, 'accessibleName', strings.drainFaucetAccessibleName() );
-          context.nodeSet( drainFaucetNode, 'helpText', strings.drainFaucetHelpText() );
+          context.nodeSet( drainFaucetNode, 'accessibleHelpText', strings.drainFaucetHelpText() );
           context.nodeSet( drainFaucetNode, 'pdomCreateAriaValueText', value => {
 
             // reverseAlternativeInput is used, which makes the provided value 'inverted' - we need to re-invert it
