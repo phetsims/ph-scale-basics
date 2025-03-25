@@ -11,6 +11,7 @@ import simLauncher from '../../joist/js/simLauncher.js';
 import PHScaleConstants from '../../ph-scale/js/common/PHScaleConstants.js';
 import PHScaleQueryParameters from '../../ph-scale/js/common/PHScaleQueryParameters.js';
 import MacroScreen from '../../ph-scale/js/macro/MacroScreen.js';
+import { QueryStringMachine } from '../../query-string-machine/js/QueryStringMachineModule.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import PhScaleBasicsStrings from './PhScaleBasicsStrings.js';
 
