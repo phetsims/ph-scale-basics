@@ -14,11 +14,24 @@ import MacroScreen from '../../ph-scale/js/macro/MacroScreen.js';
 import { QueryStringMachine } from '../../query-string-machine/js/QueryStringMachineModule.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import PhScaleBasicsStrings from './PhScaleBasicsStrings.js';
+import PreferencesModel from '../../joist/js/preferences/PreferencesModel.js';
+import PHScalePreferencesNode from '../../ph-scale/js/common/view/PHScalePreferencesNode.js';
+import PHScalePreferences from '../../ph-scale/js/common/model/PHScalePreferences.js';
 
 // If autofill query parameter was not in the URL, change the default.
 if ( !QueryStringMachine.containsKey( 'autofill' ) ) {
   PHScaleQueryParameters.autofill = false;
+  PHScalePreferences.autoFillEnabledProperty.setInitialValue( false );
+  PHScalePreferences.autoFillEnabledProperty.reset();
 }
+
+const preferencesModel = new PreferencesModel( {
+  simulationOptions: {
+    customPreferences: [ {
+      createContent: ( tandem: Tandem ) => new PHScalePreferencesNode( tandem.createTandem( 'preferencesNode' ) )
+    } ]
+  }
+} );
 
 simLauncher.launch( () => {
   const screens = [
@@ -27,7 +40,8 @@ simLauncher.launch( () => {
 
   const sim = new Sim( PhScaleBasicsStrings[ 'ph-scale-basics' ].titleStringProperty, screens, {
     credits: PHScaleConstants.CREDITS,
-    phetioDesigned: true
+    phetioDesigned: true,
+    preferencesModel: preferencesModel
   } );
 
   sim.start();
