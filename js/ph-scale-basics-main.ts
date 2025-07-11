@@ -35,7 +35,9 @@ const preferencesModel = new PreferencesModel( {
 
 simLauncher.launch( () => {
   const screens = [
-    new MacroScreen( Tandem.ROOT.createTandem( 'macroScreen' ) )
+    new MacroScreen( { tandem: Tandem.ROOT.createTandem( 'macroScreen' ), macroScreenViewOptions: {
+      isBasicsVersion: true // this is the 'pH Scale: Basics' version of the sim
+    } } )
   ];
 
   const sim = new Sim( PhScaleBasicsStrings[ 'ph-scale-basics' ].titleStringProperty, screens, {
