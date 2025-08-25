@@ -1,4 +1,4 @@
-# Concentration - Release Notes
+# pH Scale: Basics - Release Notes
 
 _pH Scale: Basics_ consists of the _Macro_ screen from the _pH Scale_ simulation.
 
