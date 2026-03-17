@@ -33,7 +33,7 @@
     "branch": "HEAD"
   },
   "perennial-alias": {
-    "sha": "c518e16b71a11644708c2353cb2d3a432f7cc07e",
+    "sha": "93adfd95ffb660fcf76947d1d8c24df4a1625462",
     "branch": "HEAD"
   },
   "ph-scale": {
@@ -41,7 +41,7 @@
     "branch": "HEAD"
   },
   "ph-scale-basics": {
-    "sha": "bff53fdffb8226174486f5fba9a3136470c145f9",
+    "sha": "de868e540d2b1ae03f69607c4beabe5a6e2cd9e4",
     "branch": "1.6"
   },
   "phet-core": {
