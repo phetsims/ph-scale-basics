@@ -19,6 +19,4 @@ type StringsType = {
 
 const PhScaleBasicsStrings = getStringModule( 'PH_SCALE_BASICS' ) as StringsType;
 
-phScaleBasics.register( 'PhScaleBasicsStrings', PhScaleBasicsStrings );
-
 export default PhScaleBasicsStrings;
