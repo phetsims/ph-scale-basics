@@ -5,5 +5,5 @@ the beaker does not automatically fill with solute when the sim starts up, or wh
 changed. This behavior can be changed with the `autofill` query parameter.
 
 Please
-see [ph-scale/doc/implementation-notes.md](https://github.com/phetsims/ph-scale/blob/main/doc/implementation-notes.md)
+see [ph-scale/doc/implementation-notes.md](../../ph-scale/doc/implementation-notes.md)
 for details.

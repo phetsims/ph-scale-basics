@@ -2,4 +2,4 @@
 
 _pH Scale: Basics_ consists of the _Macro_ screen from the _pH Scale_ simulation.
 
-Please refer to the release notes for _pH Scale_ at https://github.com/phetsims/ph-scale/blob/main/doc/release-notes.md.
+Please refer to the release notes for _pH Scale_ at [release-notes.md](../../ph-scale/doc/release-notes.md).
